@@ -1,0 +1,64 @@
+<h1>
+  Product List
+  <%= link_to '新增商品', new_product_path %>
+</h1>
+<%#  %>
+<table>
+  <thead>
+    <tr>
+      <th scope='col'>Brand</th>
+      <th scope='col'>Article no.</th>
+      <th scope='col'>Type</th>
+      <th scope='col'>Execution</th>
+      <th scope='col'>Sensor technology</th>
+      <th scope='col'>Dimension</th>
+      <th scope='col'>Voltage</th>
+      <th scope='col'>2 Channel</th>
+      <th scope='col'>Incandescent lamp load(Max.)</th>
+      <th scope='col'>Fluorescent lamp load</th>
+      <th scope='col'>LED lamp load(Max.)</th>
+      <th scope='col'>Load</th>
+      <th scope='col'>Power consumption</th>
+      <th scope='col'>Stand by power consumption</th>
+      <th scope='col'>Detection angle</th>
+      <th scope='col'>Detection range(towards)</th>
+      <th scope='col'>Detection range(across)</th>
+      <th scope='col'>Detection range(seated)</th>
+      <th scope='col'>Recommended mounting height</th>
+      <th scope='col'>Max. mounting height</th>
+      <th scope='col'>IP</th>
+      <th scope='col'>Class</th>
+      <th scope='col'>Lowest ambient temperature</th>
+      <th scope='col'>Highest ambient temperature</th>
+      <th scope='col'>Min. delay time</th>
+      <th scope='col'>Max. delay time</th>
+      <th scope='col'>Lowest Lux</th>
+      <th scope='col'>Highest Lux</th>
+      <th scope='col'>Lux learning</th>
+      <th scope='col'>Mounting type</th>
+      <th scope='col'>Application</th>
+      <th scope='col'>Slave</th>
+      <th scope='col'>Mixed light measurement</th>
+      <th scope='col'>Dimmable(Constant light)</th>
+      <th scope='col'>Stand-by light</th>
+      <th scope='col'>Push-button connectable</th>
+      <th scope='col'>Orientation light</th>
+      <th scope='col'>Bluetooth</th>
+      <th scope='col'>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% unless @products.nil?%>
+      <% @products.each do |product| %>
+        <tr>
+          <td>
+            <%= is_other_option?(product, 'brand') %>
+          </td>
+          <td><%= link_to '查看商品', product_path(product) %></td>
+          <td><%= link_to '編輯商品', edit_product_path(product) %></td>
+          <td><%= link_to '刪除商品', product_path(product), method: :delete, data: { confirm: '確定要刪除？' } %></td>
+        </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>

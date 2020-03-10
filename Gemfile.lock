@@ -59,6 +59,8 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bindex (0.8.1)
+    bitfields (0.14.0)
+      activerecord (>= 5.1)
     bootsnap (1.4.6)
       msgpack (~> 1.0)
     builder (3.2.4)
@@ -200,6 +202,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bitfields (~> 0.14.0)
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
@@ -213,7 +216,6 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
-  tzinfo-data
   web-console (>= 3.3.0)
   webdrivers
   webpacker (~> 4.0)

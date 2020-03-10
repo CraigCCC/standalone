@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :find_product, only[:show, :edit, :update, :destroy]
+  before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(params_product)
 
-    if @product
+    if @product.save
       redirect_to products_path, notice: '新增產品成功'
     else
       render :new
@@ -34,7 +34,7 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @produc.destroy
+    @product.destroy
     redirect_to products_path, notice: '刪除產品成功'
   end
 
@@ -45,6 +45,14 @@ class ProductsController < ApplicationController
   end
 
   def params_product
-    # params.require(:product).permit([:])
+    params.require(:product).permit(:brand,
+                                    :brand_text,
+                                    :article_no,
+                                    :gateway,
+                                    :knx,
+                                    :dali_addressble,
+                                    :dali_broadcast,
+                                    :standalone,
+                                    :proprietary_system)
   end
 end

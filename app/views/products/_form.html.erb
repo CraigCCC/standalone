@@ -1,0 +1,70 @@
+<div>
+  <% if product.errors.any? %>
+    <% product.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  <% end %>
+</div>
+
+<%= form_with model: product, local: true do |f| %>
+
+<%# brand%>
+<div>
+  <%= f.label :brand, 'Brand:' %>
+
+  <%= f.radio_button :brand, 'beg' %>
+  <%= f.label :brand, 'B.E.G', value: 'beg' %>
+
+  <%= f.radio_button :brand, 'esylux' %>
+  <%= f.label :brand, 'Esylux', value: 'esylux' %>
+
+  <%= f.radio_button :brand, 'steinel' %>
+  <%= f.label :brand, 'STEINEL', value: 'steinel' %>
+
+  <%= f.radio_button :brand, 'cp' %>
+  <%= f.label :brand, 'CP', value: 'cp' %>
+  
+  <%= f.radio_button :brand, 'theben' %>
+  <%= f.label :brand, 'THEBEN', value: 'theben' %>
+
+  <%= f.radio_button :brand, 'other_brand' %>
+  <%= f.label :brand, 'Others', value: 'other_brand' %>
+  <%= f.text_field :brand_text %>
+</div>
+
+<%# article_no%>
+<div>
+  <%= f.label :article_no, 'Article no.'%>
+  <%= f.text_field :article_no%>
+</div>
+
+<%# gateway_type %>
+<div>
+  <%= f.label :gateway, 'Type:'%>
+
+  <%= f.check_box :knx %>
+  <%= f.label :knx, 'KNX' %>
+
+  <%= f.check_box :dali_addressble %>
+  <%= f.label :dali_addressble, 'Dali Addressble' %>
+
+  <%= f.check_box :dali_broadcast %>
+  <%= f.label :dali_broadcast, 'Dali Broadcast' %>
+
+  <%= f.check_box :standalone %>
+  <%= f.label :standalone, 'Standalone' %>
+
+  <%= f.check_box :proprietary_system %>
+  <%= f.label :proprietary_system, 'Proprietary System' %>
+
+  <%= f.check_box :other_type %>
+  <%= f.label :other_type, 'Others' %>
+  <%= f.text_field :type_text %>
+
+</div>
+
+  <div>
+    <%= f.submit %>
+    <%= link_to 'Cancel', products_path %>
+  </div>
+<% end %>
