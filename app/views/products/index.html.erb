@@ -26,6 +26,7 @@
       <th scope='col'>Detection range(seated)</th>
       <th scope='col'>Recommended mounting height</th>
       <th scope='col'>Max. mounting height</th>
+      <th scope='col'>Min. mounting height</th>
       <th scope='col'>IP</th>
       <th scope='col'>Class</th>
       <th scope='col'>Lowest ambient temperature</th>
@@ -51,9 +52,46 @@
     <% unless @products.nil?%>
       <% @products.each do |product| %>
         <tr>
-          <td>
-            <%= is_other_option?(product, 'brand') %>
-          </td>
+          <td><%= is_other_option?(product, 'brand') %></td>
+          <td><%= product.article_no %></td>
+          <td><%= array_gateway_type(product) %></td>
+          <td><%= is_other_option?(product, 'execution') %></td>
+          <td><%= array_sensor_tech(product) %></td>
+          <td><%= product.dimension %></td>
+          <td><%= array_voltage(product) %></td>
+          <td><%= is_other_option?(product, 'two_channel') %></td>
+          <td><%= is_other_option?(product, 'incandescent_lamp_load_max') %></td>
+          <td><%= is_other_option?(product, 'fluorescent_lamp_load') %></td>
+          <td><%= is_other_option?(product, 'led_lamp_load_max') %></td>
+          <td><%= product.load_text %></td>
+          <td><%= is_other_option?(product, 'power_consumption')%></td>
+          <td><%= is_other_option?(product, 'stand_by_power_consumption')%></td>
+          <td><%= is_other_option?(product, 'detection_angle')%></td>
+          <td><%= is_other_option?(product, 'detection_range_towards')%></td>
+          <td><%= is_other_option?(product, 'detection_range_across')%></td>
+          <td><%= is_other_option?(product, 'detection_range_seated')%></td>
+          <td><%= is_other_option?(product, 'recommended_mounting_height')%></td>
+          <td><%= is_other_option?(product, 'max_mounting_height')%></td>
+          <td><%= is_other_option?(product, 'min_mounting_height')%></td>
+          <td><%= is_other_option?(product, 'ip')%></td>
+          <td><%= is_other_option?(product, 'ip_class')%></td>
+          <td><%= is_other_option?(product, 'lowest_ambient_temperature')%></td>
+          <td><%= is_other_option?(product, 'highest_ambient_temperature')%></td>
+          <td><%= is_other_option?(product, 'min_delay_time')%></td>
+          <td><%= is_other_option?(product, 'max_delay_time')%></td>
+          <td><%= is_other_option?(product, 'lowest_lux')%></td>
+          <td><%= is_other_option?(product, 'highest_lux')%></td>
+          <td><%= product.lux_learning %></td>
+          <td><%= array_mounting_type(product) %></td>
+          <td><%= array_application(product) %></td>
+          <td><%= is_other_option?(product, 'slave')%></td>
+          <td><%= is_other_option?(product, 'mixed_light_measurement')%></td>
+          <td><%= is_other_option?(product, 'dimmable_constant_light')%></td>
+          <td><%= is_other_option?(product, 'stand_by_light')%></td>
+          <td><%= is_other_option?(product, 'push_button_connectable')%></td>
+          <td><%= is_other_option?(product, 'orientation_light')%></td>
+          <td><%= array_bluetooth(product) %></td>
+          <td><%= truncate("#{product.description}", length: 20) %></td>
           <td><%= link_to '查看商品', product_path(product) %></td>
           <td><%= link_to '編輯商品', edit_product_path(product) %></td>
           <td><%= link_to '刪除商品', product_path(product), method: :delete, data: { confirm: '確定要刪除？' } %></td>
