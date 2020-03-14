@@ -1,11 +1,20 @@
 module ProductsHelper
   private
+  # def is_other_option?(product, option)
+  #   option_sym = option.to_sym
+  #   if product.send(option_sym) == "other_#{option}"
+  #     return product.send((option + '_text').to_sym)
+  #   else
+  #     return product.send(option_sym)
+  #   end
+  # end
   def is_other_option?(product, option)
     option_sym = option.to_sym
     if product.send(option_sym) == "other_#{option}"
       return product.send((option + '_text').to_sym)
     else
-      return product.send(option_sym)
+      column = product.send(option_sym)
+      return t("product.#{option}.#{column}")
     end
   end
 
@@ -18,7 +27,7 @@ module ProductsHelper
     result_array.push('Proprietary system') if product.proprietary_system.present?
     result_array.push("#{product.type_text}") if product.type_text.present?
 
-    return result_array if result_array.present?
+    return result_array.join("<br>").html_safe if result_array.present?
   end
 
   def array_sensor_tech(product)
@@ -28,7 +37,7 @@ module ProductsHelper
     result_array.push('Ultrasonic') if product.ultrasonic.present?
     result_array.push("#{product.sensor_tech_text}") if product.sensor_tech_text.present?
 
-    return result_array if result_array.present?
+    return result_array.join("<br>").html_safe if result_array.present?
   end
 
   def array_voltage(product)
@@ -47,7 +56,7 @@ module ProductsHelper
     result_array.push('110VDC') if product.vac110.present?
     result_array.push("#{product.voltage_text}") if product.voltage_text.present?
 
-    return result_array if result_array.present?
+    return result_array.join("<br>").html_safe if result_array.present?
   end
 
   def array_mounting_type(product)
@@ -58,7 +67,7 @@ module ProductsHelper
     result_array.push('Ceiling mount') if product.ceiling.present?
     result_array.push("#{product.mounting_type_text}") if product.mounting_type_text.present?
 
-    return result_array if result_array.present?
+    return result_array.join("<br>").html_safe if result_array.present?
   end
 
   def array_application(product)
@@ -81,7 +90,7 @@ module ProductsHelper
     result_array.push('Toilets') if product.toilets.present?
     result_array.push("#{product.application_text}") if product.application_text.present?
 
-    return result_array if result_array.present?
+    return result_array.join("<br>").html_safe if result_array.present?
   end
 
   def array_bluetooth(product)
@@ -92,6 +101,6 @@ module ProductsHelper
     result_array.push('Bluetooth_mesh') if product.bluetooth_mesh.present?
     result_array.push("#{product.bluetooth_text}") if product.bluetooth_text.present?
 
-    return result_array if result_array.present?
+    return result_array.join("<br>").html_safe if result_array.present?
   end
 end

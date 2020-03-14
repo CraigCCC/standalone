@@ -179,8 +179,8 @@
   <div>
     <%= f.label :fluorescent_lamp_load, 'Fluorescent lamp load:' %>
 
-    <%= f.radio_button :fluorescent_lamp_load, '1150VA' %>
-    <%= f.label :fluorescent_lamp_load, '1150VA', value: '1150VA' %>
+    <%= f.radio_button :fluorescent_lamp_load, 'fll1150va' %>
+    <%= f.label :fluorescent_lamp_load, '1150VA', value: 'fll1150va' %>
 
     <%= f.radio_button :fluorescent_lamp_load, 'other_fluorescent_lamp_load' %>
     <%= f.label :fluorescent_lamp_load, 'Others', value: 'other_fluorescent_lamp_load' %>
@@ -191,20 +191,20 @@
   <div>
     <%= f.label :led_lamp_load_max, 'LED lamp load(Max.):' %>
 
-    <%= f.radio_button :led_lamp_load_max, '150W' %>
-    <%= f.label :led_lamp_load_max, '150W', value: '150W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll150w' %>
+    <%= f.label :led_lamp_load_max, '150W', value: 'max_lll150w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '200W' %>
-    <%= f.label :led_lamp_load_max, '200W', value: '200W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll200w' %>
+    <%= f.label :led_lamp_load_max, '200W', value: 'max_lll200w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '300W' %>
-    <%= f.label :led_lamp_load_max, '300w', value: '300W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll300w' %>
+    <%= f.label :led_lamp_load_max, '300w', value: 'max_lll300w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '400W' %>
-    <%= f.label :led_lamp_load_max, '400W', value: '400W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll400w' %>
+    <%= f.label :led_lamp_load_max, '400W', value: 'max_lll400w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '500W' %>
-    <%= f.label :led_lamp_load_max, '500W', value: '500W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll500w' %>
+    <%= f.label :led_lamp_load_max, '500W', value: 'max_lll500w' %>
 
     <%= f.radio_button :led_lamp_load_max, 'other_led_lamp_load_max' %>
     <%= f.label :led_lamp_load_max, 'Others', value: 'other_led_lamp_load_max' %>
@@ -219,7 +219,7 @@
 
   <%# Power consumption 單選 %>
   <div>
-    <%= f.label :power_consumption, 'Fluorescent lamp load:' %>
+    <%= f.label :power_consumption, 'Power consumption:' %>
 
     <%= f.radio_button :power_consumption, 'pc8ma' %>
     <%= f.label :power_consumption, '8mA', value: 'pc8ma' %>
@@ -643,7 +643,7 @@
 
   <%# Max delay time 單選%>
   <div>
-    <%= f.label :max_delay_time, 'max. delay time:' %>
+    <%= f.label :max_delay_time, 'Max. delay time:' %>
 
     <%= f.radio_button :max_delay_time, 'max_dt30m' %>
     <%= f.label :max_delay_time, '30 min', value: 'max_dt30m' %>

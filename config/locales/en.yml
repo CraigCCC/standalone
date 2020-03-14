@@ -1,33 +1,262 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  product:
+    brand:
+      title: "Brand"
+      beg: "B.E.G"
+      esylux: "Esylux"
+      steinel: "STEINEL"
+      cp: "CP"
+      theben: "THEBEN"
+    article_no: 
+      title: "Article no."
+    gateway:
+      title: "Type"
+    execution:
+      title: "Execution"
+      motion_sensor: 'Motion sensor'
+      presence_sensor: 'Presence sensor'
+      not_mention: 'Not mention'
+    sensor_tech:
+      title: 'Sensor technology'
+    dimension:
+      title: 'Dimension'
+    voltage:
+      title: 'Voltage'
+    two_channel:
+      title: '2 Channel'
+      no_channel: 'No'
+      hvac: 'HVAC'
+    incandescent_lamp_load_max:
+      title: 'Incandescent lamp load(Max.)'
+      w2000: '2000W'
+      w2300: '2300W'
+    fluorescent_lamp_load:
+      title: 'Fluorescent lamp load'
+      fll1150va: '1150VA'
+    led_lamp_load_max:
+      title: 'LED lamp load(Max.)'
+      max_lll150w: '150W'
+      max_lll200w: '200W'
+      max_lll300w: '300w'
+      max_lll400w: '400W'
+      max_lll500w: '500W'
+    load:
+      title: 'Load'
+    power_consumption:
+      title: 'Power consumption'
+      pc8ma: '8mA'
+      pc10ma: '10mA'
+      pc16ma: '16mA'
+      pc03w: '0.3W'
+      pc05w: '0.5W'
+      pc06w: '0.6W'
+      pc15w: '1.5W'
+    stand_by_power_consumption:
+      title: 'Stand by power consumption'
+      sbpc01w: '0.1W'
+      sbpc025w: '0.25W'
+      sbpc05w: '0.5W'
+      sbpc1w: '1W'
+      sbpc02ma: '0.2mA'
+    detection_angle:
+      title: 'Detection angle'
+      da110: '110˚'
+      da120: '120˚'
+      da150: '150˚'
+      da170: '170˚'
+      da180: '180˚'
+      da230: '230˚'
+      da240: '240˚'
+      da360: '360˚'
+    detection_range_towards:
+      title: 'Detection range(towards)'
+      drt3m: '3m'
+      drt5m: '5m'
+      drt6m: '6m'
+      drt7m: '7m'
+      drt8m: '8m'
+      drt9m: '9m'
+      drt10m: '10m'
+      drt12m: '12m'
+      drt15m: '15m'
+      drt28m: '28m'
+      drt30m: '30m'
+    detection_range_across:
+      title: 'Detection range(across)'
+      dra3m: '3m'
+      dra5m: '5m'
+      dra6m: '6m'
+      dra7m: '7m'
+      dra8m: '8m'
+      dra9m: '9m'
+      dra10m: '10m'
+      dra12m: '12m'
+      dra15m: '15m'
+      dra16m: '16m'
+      dra28m: '28m'
+      dra30m: '30m'
+      dra32m: '32m'
+      dra40m: '40m'
+    detection_range_seated:
+      title: 'Detection range(seated)'
+      drs3m: '3m'
+      drs5m: '5m'
+      drs6m: '6m'
+      drs7m: '7m'
+      drs8m: '8m'
+      drs9m: '9m'
+      drs10m: '10m'
+      drs12m: '12m'
+      drs15m: '15m'
+      drs28m: '28m'
+      drs30m: '30m'
+    recommended_mounting_height:
+      title: 'Recommended mounting height'
+      rmh1d1m: '1.1m'
+      rmh2m: '2m'
+      rmh2d5m: '2.5m'
+      rmh2d8m: '2.8m'
+      rmh3m: '3m'
+      rmh_not_mention: 'Not mention'
+    max_mounting_height:
+      title: 'Max. mounting height'
+      max_mh2d2m: '2.2m'
+      max_mh3m: '3m'
+      max_mh5m: '5m'
+      max_mh14m: '14m'
+      max_mh15m: '15m'
+      max_mh_not_mention: 'Not mention'
+    min_mounting_height:
+      title: 'Min. mounting height'
+      min_mh1d1m: '1.1m'
+      min_mh1d8m: '1.8m'
+      min_mh2m: '2m'
+      min_mh2d5m: '2.5m'
+      min_mh4m: '4m'
+      min_mh_not_mention: 'Not mention'
+    ip:
+      title: 'IP'
+      ip20: 'IP20'
+      ip40: 'IP40'
+      ip44: 'IP44'
+      ip45: 'IP45'
+      ip50: 'IP50'
+      ip54: 'IP54'
+      ip55: 'IP55'
+      ip60: 'IP60'
+      ip65: 'IP65'
+      ip66: 'IP66'
+    ip_class:
+      title: 'Class'
+      i: 'Ⅰ'
+      ii: 'ⅠⅠ'
+      iii: 'ⅠⅠⅠ'
+    lowest_ambient_temperature:
+      title: 'Lowest ambient temperature'
+      latn25: '-25˚'
+      latn20: '-20˚'
+      latn10: '10˚'
+      lat0: '0˚'
+    highest_ambient_temperature:
+      title: 'Highest ambient temperature'
+      hat40: '40˚'
+      hat45: '45˚'
+      hat50: '50˚'
+      hat55: '55˚'
+    min_delay_time:
+      title: 'Min. delay time'
+      min_dt10s: '10 sec'
+      min_dt15s: '15 sec'
+      min_dt1m: '1 min'
+      min_dt5m: '5 min'
+    max_delay_time:
+      title: 'Max. delay time'
+      max_dt30m: '30 min'
+      max_dt60m: '60 min'
+      max_dt120m: '120 min'
+    lowest_lux:
+      title: 'Lowest lux'
+      lux0: '0'
+      lux2: '2 lux'
+      lux5: '5 lux'
+      lux10: '10 lux'
+      lux20: '20 lux'
+    highest_lux:
+      title: 'Highest lux'
+      lux500: '500 lux'
+      lux1000: '1000 lux'
+      lux1500: '1500 lux'
+      lux2000: '2000 lux'
+      lux2500: '2500 lux'
+      lux3000: '3000 lux'
+      lux_infinity: '∞'
+    lux_learning:
+      title: 'Lux learning'
+    mounting_type:
+      title: 'Mounting type'
+    application:
+      title: 'Application'
+    slave:
+      title: 'Slave'
+      s_yes: 'Yes'
+      s_no: 'No'
+      s_not_mention: 'Not mention'
+    mixed_light_measurement:
+      title: 'Mixed light measurement'
+      mlm_yes: 'Yes'
+      mlm_no: 'No'
+      mlm_not_mention: 'Not mention'
+    dimmable_constant_light:
+      title: 'Dimmable(Constant light)'
+      dcl_yes: 'Yes'
+      dcl_no: 'No'
+      dcl_not_mention: 'Not mention'
+    stand_by_light:
+      title: 'Stand-by light'
+      sbl_no: 'No'
+      sbl10p: '10%'
+      sbl10_40p: '10-40%'
+      sbl10_50p: '10-50%'
+    push_button_connectable:
+      title: 'Push-button connectable'
+      pbc_yes: 'Yes'
+      pbc_no: 'No'
+      pbc_not_mention: 'Not mention'
+    orientation_light:
+      title: 'Orientation light'
+      ol_yes: 'Yes'
+      ol_no: 'No'
+      ol_not_mention: 'Not mention'
+    bluetooth:
+      title: 'Bluetooth'
+    description:
+      title: 'Description'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
