@@ -55,3 +55,5 @@ end
 
 # Save migrations and columns by storing multiple booleans in a single integer
 gem 'bitfields', '~> 0.14.0'
+# A set of common locale data and translations to internationalize and/or localize your Rails applications.
+gem 'rails-i18n', '~> 6.0'

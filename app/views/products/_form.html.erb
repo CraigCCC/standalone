@@ -10,914 +10,914 @@
 
   <%# brand 單選%>
   <div>
-    <%= f.label :brand, 'Brand:' %>
+    <%= f.label :brand, t("product.column.brand.title")+ ':' %>
 
     <%= f.radio_button :brand, 'beg' %>
-    <%= f.label :brand, 'B.E.G', value: 'beg' %>
+    <%= f.label :brand, t("product.column.brand.beg"), value: 'beg' %>
 
     <%= f.radio_button :brand, 'esylux' %>
-    <%= f.label :brand, 'Esylux', value: 'esylux' %>
+    <%= f.label :brand, t("product.column.brand.esylux"), value: 'esylux' %>
 
     <%= f.radio_button :brand, 'steinel' %>
-    <%= f.label :brand, 'STEINEL', value: 'steinel' %>
+    <%= f.label :brand, t("product.column.brand.steinel"), value: 'steinel' %>
 
     <%= f.radio_button :brand, 'cp' %>
-    <%= f.label :brand, 'CP', value: 'cp' %>
+    <%= f.label :brand, t("product.column.brand.cp"), value: 'cp' %>
     
     <%= f.radio_button :brand, 'theben' %>
-    <%= f.label :brand, 'THEBEN', value: 'theben' %>
+    <%= f.label :brand, t("product.column.brand.theben"), value: 'theben' %>
 
     <%= f.radio_button :brand, 'other_brand' %>
-    <%= f.label :brand, 'Others', value: 'other_brand' %>
+    <%= f.label :brand, t("product.column.other.title"), value: 'other_brand' %>
     <%= f.text_field :brand_text %>
   </div>
 
   <%# article_no%>
   <div>
-    <%= f.label :article_no, 'Article no.'%>
+    <%= f.label :article_no, t("product.column.article_no.title") + ':' %>
     <%= f.text_field :article_no%>
   </div>
 
   <%# gateway_type 複選%>
   <div>
-    <%= f.label :gateway, 'Type:'%>
+    <%= f.label :gateway, t("product.column.gateway.title") + ':' %>
 
     <%= f.check_box :knx %>
-    <%= f.label :knx, 'KNX' %>
+    <%= f.label :knx, t("product.column.gateway.knx") %>
 
     <%= f.check_box :dali_addressble %>
-    <%= f.label :dali_addressble, 'Dali Addressble' %>
+    <%= f.label :dali_addressble, t("product.column.gateway.dali_addressble") %>
 
     <%= f.check_box :dali_broadcast %>
-    <%= f.label :dali_broadcast, 'Dali Broadcast' %>
+    <%= f.label :dali_broadcast, t("product.column.gateway.dali_broadcast") %>
 
     <%= f.check_box :standalone %>
-    <%= f.label :standalone, 'Standalone' %>
+    <%= f.label :standalone, t("product.column.gateway.standalone") %>
 
     <%= f.check_box :proprietary_system %>
-    <%= f.label :proprietary_system, 'Proprietary System' %>
+    <%= f.label :proprietary_system, t("product.column.gateway.proprietary_system") %>
 
     <%= f.check_box :other_type %>
-    <%= f.label :other_type, 'Others' %>
+    <%= f.label :other_type, t("product.column.other.title") %>
     <%= f.text_field :type_text %>
 
   </div>
 
   <%# Execution  單選  Motion sensor  Presence sensor Not mention Others(簡答) %>
   <div>
-    <%= f.label :execution, 'Execution:' %>
+    <%= f.label :execution, t("product.column.execution.title") + ':' %>
 
     <%= f.radio_button :execution, 'motion_sensor' %>
-    <%= f.label :execution, 'Motion sensor', value: 'motion_sensor' %>
+    <%= f.label :execution, t("product.column.execution.motion_sensor"), value: 'motion_sensor' %>
 
     <%= f.radio_button :execution, 'presence_sensor' %>
-    <%= f.label :execution, 'Presence sensor', value: 'presence_sensor' %>
+    <%= f.label :execution, t("product.column.execution.presence_sensor"), value: 'presence_sensor' %>
 
     <%= f.radio_button :execution, 'not_mention' %>
-    <%= f.label :execution, 'Not mention', value: 'not_mention' %>
+    <%= f.label :execution, t("product.column.execution.not_mention"), value: 'not_mention' %>
 
     <%= f.radio_button :execution, 'other_execution' %>
-    <%= f.label :execution, 'Others', value: 'other_execution' %>
+    <%= f.label :execution, t("product.column.other.title"), value: 'other_execution' %>
     <%= f.text_field :execution_text %>
 
   </div>
 
   <%# sensor_tech: 複選 [:other_sensor_tech, :pir, :hf, :ultrasonic]%>
   <div>
-    <%= f.label :sensor_tech, 'Sensor technology:'%>
+    <%= f.label :sensor_tech, t("product.column.sensor_tech.title") + ':' %>
 
     <%= f.check_box :pir %>
-    <%= f.label :pir, 'PIR'%>
+    <%= f.label :pir, t("product.column.sensor_tech.pir") %>
 
     <%= f.check_box :hf %>
-    <%= f.label :hf, 'HF' %>
+    <%= f.label :hf, t("product.column.sensor_tech.hf") %>
 
     <%= f.check_box :ultrasonic %>
-    <%= f.label :ultrasonic, 'Ultrasonic' %>
+    <%= f.label :ultrasonic, t("product.column.sensor_tech.ultrasonic") %>
 
     <%= f.check_box :other_sensor_tech %>
-    <%= f.label :other_sensor_tech, 'Others' %>
+    <%= f.label :other_sensor_tech, t("product.column.other.title.") %>
     <%= f.text_field :sensor_tech_text %>
   </div>
 
   <%# Dimension 簡答 %>
   <div>
-    <%= f.label :dimension, 'Dimension' %>
+    <%= f.label :dimension, t("product.column.dimension.title") + ':' %>
     <%= f.text_field :dimension %>
   </div>
 
   <%# Voltage 複選 %>
   <div>
-    <%= f.label :voltage, 'Voltage:'%>
+    <%= f.label :voltage, t("product.column.voltage.title") + ':' %>
 
     <%= f.check_box :vdc12 %>
-    <%= f.label :vdc12, '12VDC'%>
+    <%= f.label :vdc12, t("product.column.voltage.vdc12") %>
 
     <%= f.check_box :vdc24 %>
-    <%= f.label :vdc24, 'VDC24' %>
+    <%= f.label :vdc24, t("product.column.voltage.vdc24") %>
 
     <%= f.check_box :vac110 %>
-    <%= f.label :vac110, '110VAC' %>
+    <%= f.label :vac110, t("product.column.voltage.vac110") %>
 
     <%= f.check_box :vac110_230 %>
-    <%= f.label :vac110_230, '110-230VAC' %>
+    <%= f.label :vac110_230, t("product.column.voltage.vac110_230") %>
 
     <%= f.check_box :vac220_240 %>
-    <%= f.label :vac220_240, '220-240VAC' %>
+    <%= f.label :vac220_240, t("product.column.voltage.vac220_240") %>
 
     <%= f.check_box :v230 %>
-    <%= f.label :v230, '230V' %>
+    <%= f.label :v230, t("product.column.voltage.v230") %>
 
     <%= f.check_box :vdc21_30 %>
-    <%= f.label :vdc21_30, '21-30VDC(KNX bus)' %>
+    <%= f.label :vdc21_30, t("product.column.voltage.vdc21_30") %>
 
     <%= f.check_box :vdc9_22 %>
-    <%= f.label :vdc9_22, '9.5-22.5VDC(DALI bus)' %>
+    <%= f.label :vdc9_22, t("product.column.voltage.vdc9_22") %>
 
     <%= f.check_box :vdc12_36 %>
-    <%= f.label :vdc12_36, '12-36VDC' %>
+    <%= f.label :vdc12_36, t("product.column.voltage.vdc12_36") %>
 
     <%= f.check_box :vdc12_48 %>
-    <%= f.label :vdc12_48, '12-48VDC' %>
+    <%= f.label :vdc12_48, t("product.column.voltage.vdc12_48") %>
 
     <%= f.check_box :other_voltage %>
-    <%= f.label :other_voltage, 'Others' %>
+    <%= f.label :other_voltage, t("product.column.other.title") %>
     <%= f.text_field :voltage_text %>
   </div>
 
   <%# Two channel 單選 %>
   <div>
-    <%= f.label :two_channel, '2 Channel:' %>
+    <%= f.label :two_channel, t("product.column.two_channel.title") + ':' %>
 
     <%= f.radio_button :two_channel, 'no_channel' %>
-    <%= f.label :two_channel, 'NO', value: 'no_channel' %>
+    <%= f.label :two_channel, t("product.column.two_channel.no_channel"), value: 'no_channel' %>
 
     <%= f.radio_button :two_channel, 'hvac' %>
-    <%= f.label :two_channel, 'HVAC', value: 'hvac' %>
+    <%= f.label :two_channel, t("product.column.two_channel.hvac"), value: 'hvac' %>
 
     <%= f.radio_button :two_channel, 'other_two_channel' %>
-    <%= f.label :two_channel, 'Others', value: 'other_two_channel' %>
+    <%= f.label :two_channel, t("product.column.other.title"), value: 'other_two_channel' %>
     <%= f.text_field :two_channel_text %>
   </div>
 
   <%# Incandescent max 單選 %>
   <div>
-    <%= f.label :incandescent_lamp_load_max, 'Incandescent lamp lpad(Max.):' %>
+    <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.title") + ':' %>
 
     <%= f.radio_button :incandescent_lamp_load_max, 'w2000' %>
-    <%= f.label :incandescent_lamp_load_max, '2000W', value: 'w2000' %>
+    <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.w2000"), value: 'w2000' %>
 
     <%= f.radio_button :incandescent_lamp_load_max, 'w2300' %>
-    <%= f.label :incandescent_lamp_load_max, '2300W', value: 'w2300' %>
+    <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.w2300"), value: 'w2300' %>
 
     <%= f.radio_button :incandescent_lamp_load_max, 'other_incandescent_lamp_load_max' %>
-    <%= f.label :incandescent_lamp_load_max, 'Others', value: 'other_incandescent_lamp_load_max' %>
+    <%= f.label :incandescent_lamp_load_max, t("product.column.other.title"), value: 'other_incandescent_lamp_load_max' %>
     <%= f.text_field :incandescent_lamp_load_max_text %>
   </div>
 
   <%# Fluorescent lamp 單選 %>
   <div>
-    <%= f.label :fluorescent_lamp_load, 'Fluorescent lamp load:' %>
+    <%= f.label :fluorescent_lamp_load, t('product.fluorescent_lamp_load.title') + ':' %>
 
-    <%= f.radio_button :fluorescent_lamp_load, '1150VA' %>
-    <%= f.label :fluorescent_lamp_load, '1150VA', value: '1150VA' %>
+    <%= f.radio_button :fluorescent_lamp_load, 'fll1150va' %>
+    <%= f.label :fluorescent_lamp_load, t("product.column.fluorescent_lamp_load.fll1150va"), value: 'fll1150va' %>
 
     <%= f.radio_button :fluorescent_lamp_load, 'other_fluorescent_lamp_load' %>
-    <%= f.label :fluorescent_lamp_load, 'Others', value: 'other_fluorescent_lamp_load' %>
+    <%= f.label :fluorescent_lamp_load, t("product.column.other.title"), value: 'other_fluorescent_lamp_load' %>
     <%= f.text_field :fluorescent_lamp_load_text %>
   </div>
 
   <%# Led lamp load max 單選 %>
   <div>
-    <%= f.label :led_lamp_load_max, 'LED lamp load(Max.):' %>
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.title") + ':' %>
 
-    <%= f.radio_button :led_lamp_load_max, '150W' %>
-    <%= f.label :led_lamp_load_max, '150W', value: '150W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll150w' %>
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll150w"), value: 'max_lll150w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '200W' %>
-    <%= f.label :led_lamp_load_max, '200W', value: '200W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll200w' %>
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll200w"), value: 'max_lll200w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '300W' %>
-    <%= f.label :led_lamp_load_max, '300w', value: '300W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll300w' %>
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll300w"), value: 'max_lll300w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '400W' %>
-    <%= f.label :led_lamp_load_max, '400W', value: '400W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll400w' %>
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll400w"), value: 'max_lll400w' %>
 
-    <%= f.radio_button :led_lamp_load_max, '500W' %>
-    <%= f.label :led_lamp_load_max, '500W', value: '500W' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll500w' %>
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll500w"), value: 'max_lll500w' %>
 
     <%= f.radio_button :led_lamp_load_max, 'other_led_lamp_load_max' %>
-    <%= f.label :led_lamp_load_max, 'Others', value: 'other_led_lamp_load_max' %>
+    <%= f.label :led_lamp_load_max, t("product.column.other.title"), value: 'other_led_lamp_load_max' %>
     <%= f.text_field :led_lamp_load_max_text %>
   </div>
 
   <%# Load 簡答 %>
   <div>
-    <%= f.label :load, 'Load:' %>
+    <%= f.label :load, t("product.column.load.title") + ':' %>
     <%= f.text_field :load_text %>
   </div>
 
   <%# Power consumption 單選 %>
   <div>
-    <%= f.label :power_consumption, 'Fluorescent lamp load:' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.title") + ':' %>
 
     <%= f.radio_button :power_consumption, 'pc8ma' %>
-    <%= f.label :power_consumption, '8mA', value: 'pc8ma' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc8ma"), value: 'pc8ma' %>
 
     <%= f.radio_button :power_consumption, 'pc10ma' %>
-    <%= f.label :power_consumption, '10mA', value: 'pc10ma' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc10ma"), value: 'pc10ma' %>
 
     <%= f.radio_button :power_consumption, 'pc16ma' %>
-    <%= f.label :power_consumption, '16mA', value: 'pc16ma' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc16ma"), value: 'pc16ma' %>
 
     <%= f.radio_button :power_consumption, 'pc03w' %>
-    <%= f.label :power_consumption, '0.3W', value: 'pc03w' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc03w"), value: 'pc03w' %>
 
     <%= f.radio_button :power_consumption, 'pc05w' %>
-    <%= f.label :power_consumption, '0.5W', value: 'pc05w' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc05w"), value: 'pc05w' %>
 
     <%= f.radio_button :power_consumption, 'pc06w' %>
-    <%= f.label :power_consumption, '0.6W', value: 'pc06w' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc06w"), value: 'pc06w' %>
 
     <%= f.radio_button :power_consumption, 'pc15w' %>
-    <%= f.label :power_consumption, '1.5W', value: 'pc15w' %>
+    <%= f.label :power_consumption, t("product.column.power_consumption.pc15w"), value: 'pc15w' %>
 
     <%= f.radio_button :power_consumption, 'other_power_consumption' %>
-    <%= f.label :power_consumption, 'Others', value: 'other_power_consumption' %>
+    <%= f.label :power_consumption, t("product.column.other.title"), value: 'other_power_consumption' %>
     <%= f.text_field :power_consumption_text %>
   </div>
 
   <%# Stand by power consumption 單選 %>
   <div>
-    <%= f.label :stand_by_power_consumption, 'Stand by power consumption:' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.title") + ':' %>
 
     <%= f.radio_button :stand_by_power_consumption, 'sbpc01w' %>
-    <%= f.label :stand_by_power_consumption, '0.1W', value: 'sbpc01w' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc01w"), value: 'sbpc01w' %>
 
     <%= f.radio_button :stand_by_power_consumption, 'sbpc025w' %>
-    <%= f.label :stand_by_power_consumption, '0.25W', value: 'sbpc025w' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc025w"), value: 'sbpc025w' %>
 
     <%= f.radio_button :stand_by_power_consumption, 'sbpc05w' %>
-    <%= f.label :stand_by_power_consumption, '0.5W', value: 'sbpc05w' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc05w"), value: 'sbpc05w' %>
 
     <%= f.radio_button :stand_by_power_consumption, 'sbpc1w' %>
-    <%= f.label :stand_by_power_consumption, '1W', value: 'sbpc1w' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc1w"), value: 'sbpc1w' %>
 
     <%= f.radio_button :stand_by_power_consumption, 'sbpc02ma' %>
-    <%= f.label :stand_by_power_consumption, '0.2mA', value: 'sbpc02ma' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc02ma"), value: 'sbpc02ma' %>
 
     <%= f.radio_button :stand_by_power_consumption, 'other_stand_by_power_consumption' %>
-    <%= f.label :stand_by_power_consumption, 'Others', value: 'other_stand_by_power_consumption' %>
+    <%= f.label :stand_by_power_consumption, t("product.column.other.title"), value: 'other_stand_by_power_consumption' %>
     <%= f.text_field :stand_by_power_consumption_text %>
   </div>
 
   <%# Detection angle 單選 %>
   <div>
-    <%= f.label :detection_angle, 'Detection angle:' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.title") + ':' %>
 
     <%= f.radio_button :detection_angle, 'da110' %>
-    <%= f.label :detection_angle, '110˚', value: 'da110' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da110"), value: 'da110' %>
 
     <%= f.radio_button :detection_angle, 'da120' %>
-    <%= f.label :detection_angle, '120˚', value: 'da120' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da120"), value: 'da120' %>
 
     <%= f.radio_button :detection_angle, 'da150' %>
-    <%= f.label :detection_angle, '150˚', value: 'da150' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da150"), value: 'da150' %>
 
     <%= f.radio_button :detection_angle, 'da170' %>
-    <%= f.label :detection_angle, '170˚', value: 'da170' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da170"), value: 'da170' %>
 
     <%= f.radio_button :detection_angle, 'da180' %>
-    <%= f.label :detection_angle, '180˚', value: 'da180' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da180"), value: 'da180' %>
 
     <%= f.radio_button :detection_angle, 'da230' %>
-    <%= f.label :detection_angle, '230˚', value: 'da230' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da230"), value: 'da230' %>
 
     <%= f.radio_button :detection_angle, 'da240' %>
-    <%= f.label :detection_angle, '240˚', value: 'da240' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da240"), value: 'da240' %>
 
     <%= f.radio_button :detection_angle, 'da360' %>
-    <%= f.label :detection_angle, '360˚', value: 'da360' %>
+    <%= f.label :detection_angle, t("product.column.detection_angle.da360"), value: 'da360' %>
 
     <%= f.radio_button :detection_angle, 'other_detection_angle' %>
-    <%= f.label :detection_angle, 'Others', value: 'other_detection_angle' %>
+    <%= f.label :detection_angle, t("product.column.other.title"), value: 'other_detection_angle' %>
     <%= f.text_field :detection_angle_text %>
   </div>
 
   <%# Detection range (towards) 單選 %>
   <div>
-    <%= f.label :detection_range_towards, 'Detection range(towards):' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.title") + ':' %>
 
     <%= f.radio_button :detection_range_towards, 'drt3m' %>
-    <%= f.label :detection_range_towards, '3m', value: 'drt3m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt3m"), value: 'drt3m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt5m' %>
-    <%= f.label :detection_range_towards, '5m', value: 'drt5m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt5m"), value: 'drt5m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt6m' %>
-    <%= f.label :detection_range_towards, '6m', value: 'drt6m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt6m"), value: 'drt6m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt7m' %>
-    <%= f.label :detection_range_towards, '7m', value: 'drt7m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt7m"), value: 'drt7m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt8m' %>
-    <%= f.label :detection_range_towards, '8m', value: 'drt8m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt8m"), value: 'drt8m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt9m' %>
-    <%= f.label :detection_range_towards, '9m', value: 'drt9m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt9m"), value: 'drt9m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt10m' %>
-    <%= f.label :detection_range_towards, '10m', value: 'drt10m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt10m"), value: 'drt10m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt12m' %>
-    <%= f.label :detection_range_towards, '12m', value: 'drt12m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt12m"), value: 'drt12m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt15m' %>
-    <%= f.label :detection_range_towards, '15m', value: 'drt15m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt15m"), value: 'drt15m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt28m' %>
-    <%= f.label :detection_range_towards, '28m', value: 'drt28m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt28m"), value: 'drt28m' %>
 
     <%= f.radio_button :detection_range_towards, 'drt30m' %>
-    <%= f.label :detection_range_towards, '30m', value: 'drt30m' %>
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt30m"), value: 'drt30m' %>
 
     <%= f.radio_button :detection_range_towards, 'other_detection_range_towards' %>
-    <%= f.label :detection_range_towards, 'Others', value: 'other_detection_range_towards' %>
+    <%= f.label :detection_range_towards, t("product.column.other.title"), value: 'other_detection_range_towards' %>
     <%= f.text_field :detection_range_towards_text %>
   </div>
 
   <%# Detection range (across) 單選 %>
   <div>
-    <%= f.label :detection_range_across, 'Detection range(across):' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.title") + ':' %>
 
     <%= f.radio_button :detection_range_across, 'dra3m' %>
-    <%= f.label :detection_range_across, '3m', value: 'dra3m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra3m"), value: 'dra3m' %>
 
     <%= f.radio_button :detection_range_across, 'dra5m' %>
-    <%= f.label :detection_range_across, '5m', value: 'dra5m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra5m"), value: 'dra5m' %>
 
     <%= f.radio_button :detection_range_across, 'dra6m' %>
-    <%= f.label :detection_range_across, '6m', value: 'dra6m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra6m"), value: 'dra6m' %>
 
     <%= f.radio_button :detection_range_across, 'dra7m' %>
-    <%= f.label :detection_range_across, '7m', value: 'dra7m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra7m"), value: 'dra7m' %>
 
     <%= f.radio_button :detection_range_across, 'dra8m' %>
-    <%= f.label :detection_range_across, '8m', value: 'dra8m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra8m"), value: 'dra8m' %>
 
     <%= f.radio_button :detection_range_across, 'dra9m' %>
-    <%= f.label :detection_range_across, '9m', value: 'dra9m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra9m"), value: 'dra9m' %>
 
     <%= f.radio_button :detection_range_across, 'dra10m' %>
-    <%= f.label :detection_range_across, '10m', value: 'dra10m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra10m"), value: 'dra10m' %>
 
     <%= f.radio_button :detection_range_across, 'dra12m' %>
-    <%= f.label :detection_range_across, '12m', value: 'dra12m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra12m"), value: 'dra12m' %>
 
     <%= f.radio_button :detection_range_across, 'dra15m' %>
-    <%= f.label :detection_range_across, '15m', value: 'dra15m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra15m"), value: 'dra15m' %>
 
     <%= f.radio_button :detection_range_across, 'dra16m' %>
-    <%= f.label :detection_range_across, '16m', value: 'dra16m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra16m"), value: 'dra16m' %>
 
     <%= f.radio_button :detection_range_across, 'dra28m' %>
-    <%= f.label :detection_range_across, '28m', value: 'dra28m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra28m"), value: 'dra28m' %>
 
     <%= f.radio_button :detection_range_across, 'dra30m' %>
-    <%= f.label :detection_range_across, '30m', value: 'dra30m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra30m"), value: 'dra30m' %>
 
     <%= f.radio_button :detection_range_across, 'dra32m' %>
-    <%= f.label :detection_range_across, '32m', value: 'dra32m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra32m"), value: 'dra32m' %>
 
     <%= f.radio_button :detection_range_across, 'dra40m' %>
-    <%= f.label :detection_range_across, '40m', value: 'dra40m' %>
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.dra40m"), value: 'dra40m' %>
 
     <%= f.radio_button :detection_range_across, 'other_detection_range_across' %>
-    <%= f.label :detection_range_across, 'Others', value: 'other_detection_range_across' %>
+    <%= f.label :detection_range_across, t("product.column.other.title"), value: 'other_detection_range_across' %>
     <%= f.text_field :detection_range_across_text %>
   </div>
 
   <%# Detection range (seated) 單選 %>
   <div>
-    <%= f.label :detection_range_seated, 'Detection range(seated):' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.title") + ':' %>
 
     <%= f.radio_button :detection_range_seated, 'drs3m' %>
-    <%= f.label :detection_range_seated, '3m', value: 'drs3m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs3m"), value: 'drs3m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs5m' %>
-    <%= f.label :detection_range_seated, '5m', value: 'drs5m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs5m"), value: 'drs5m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs6m' %>
-    <%= f.label :detection_range_seated, '6m', value: 'drs6m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs6m"), value: 'drs6m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs7m' %>
-    <%= f.label :detection_range_seated, '7m', value: 'drs7m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs7m"), value: 'drs7m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs8m' %>
-    <%= f.label :detection_range_seated, '8m', value: 'drs8m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs8m"), value: 'drs8m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs9m' %>
-    <%= f.label :detection_range_seated, '9m', value: 'drs9m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs9m"), value: 'drs9m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs10m' %>
-    <%= f.label :detection_range_seated, '10m', value: 'drs10m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs10m"), value: 'drs10m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs12m' %>
-    <%= f.label :detection_range_seated, '12m', value: 'drs12m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs12m"), value: 'drs12m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs15m' %>
-    <%= f.label :detection_range_seated, '15m', value: 'drs15m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs15m"), value: 'drs15m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs28m' %>
-    <%= f.label :detection_range_seated, '28m', value: 'drs28m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs28m"), value: 'drs28m' %>
 
     <%= f.radio_button :detection_range_seated, 'drs30m' %>
-    <%= f.label :detection_range_seated, '30m', value: 'drs30m' %>
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs30m"), value: 'drs30m' %>
 
     <%= f.radio_button :detection_range_seated, 'other_detection_range_seated' %>
-    <%= f.label :detection_range_seated, 'Others', value: 'other_detection_range_seated' %>
+    <%= f.label :detection_range_seated, t("product.column.other.title"), value: 'other_detection_range_seated' %>
     <%= f.text_field :detection_range_seated_text %>
   </div>
 
   <%# Recommended mounting height 單選 %>
   <div>
-    <%= f.label :recommended_mounting_height, 'Recommended mounting height:' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.title") + ':' %>
 
     <%= f.radio_button :recommended_mounting_height, 'rmh1d1m' %>
-    <%= f.label :recommended_mounting_height, '1.1m', value: 'rmh1d1m' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh1d1m"), value: 'rmh1d1m' %>
 
     <%= f.radio_button :recommended_mounting_height, 'rmh2m' %>
-    <%= f.label :recommended_mounting_height, '2m', value: 'rmh2m' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh2m"), value: 'rmh2m' %>
 
     <%= f.radio_button :recommended_mounting_height, 'rmh2d5m' %>
-    <%= f.label :recommended_mounting_height, '2.5m', value: 'rmh2d5m' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh2d5m"), value: 'rmh2d5m' %>
 
     <%= f.radio_button :recommended_mounting_height, 'rmh2d8m' %>
-    <%= f.label :recommended_mounting_height, '2.8m', value: 'rmh2d8m' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh2d8m"), value: 'rmh2d8m' %>
 
     <%= f.radio_button :recommended_mounting_height, 'rmh3m' %>
-    <%= f.label :recommended_mounting_height, '3m', value: 'rmh3m' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh3m"), value: 'rmh3m' %>
 
     <%= f.radio_button :recommended_mounting_height, 'rmh_not_mention' %>
-    <%= f.label :recommended_mounting_height, 'Not mention', value: 'rmh_not_mention' %>
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh_not_mention"), value: 'rmh_not_mention' %>
 
     <%= f.radio_button :recommended_mounting_height, 'other_recommended_mounting_height' %>
-    <%= f.label :recommended_mounting_height, 'Others', value: 'other_recommended_mounting_height' %>
+    <%= f.label :recommended_mounting_height, t("product.column.other.title"), value: 'other_recommended_mounting_height' %>
     <%= f.text_field :recommended_mounting_height_text %>
   </div>
 
   <%# Max mounting height 單選 %>
   <div>
-    <%= f.label :max_mounting_height, 'Max. mounting height:' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.title") + ':' %>
 
     <%= f.radio_button :max_mounting_height, 'max_mh2d2m' %>
-    <%= f.label :max_mounting_height, '2.2m', value: 'max_mh2d2m' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh2d2m"), value: 'max_mh2d2m' %>
 
     <%= f.radio_button :max_mounting_height, 'max_mh3m' %>
-    <%= f.label :max_mounting_height, '3m', value: 'max_mh3m' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh3m"), value: 'max_mh3m' %>
 
     <%= f.radio_button :max_mounting_height, 'max_mh5m' %>
-    <%= f.label :max_mounting_height, '5m', value: 'max_mh5m' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh5m"), value: 'max_mh5m' %>
 
     <%= f.radio_button :max_mounting_height, 'max_mh14m' %>
-    <%= f.label :max_mounting_height, '14m', value: 'max_mh14m' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh14m"), value: 'max_mh14m' %>
 
     <%= f.radio_button :max_mounting_height, 'max_mh15m' %>
-    <%= f.label :max_mounting_height, '15m', value: 'max_mh15m' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh15m"), value: 'max_mh15m' %>
 
     <%= f.radio_button :max_mounting_height, 'max_mh_not_mention' %>
-    <%= f.label :max_mounting_height, 'Not mention', value: 'max_mh_not_mention' %>
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh_not_mention"), value: 'max_mh_not_mention' %>
 
     <%= f.radio_button :max_mounting_height, 'other_max_mounting_height' %>
-    <%= f.label :max_mounting_height, 'Others', value: 'other_max_mounting_height' %>
+    <%= f.label :max_mounting_height, t("product.column.other.title"), value: 'other_max_mounting_height' %>
     <%= f.text_field :max_mounting_height_text %>
   </div>
 
   <%# Min mounting height 單選 %>
   <div>
-    <%= f.label :min_mounting_height, 'Min. mounting height:' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.title") + ':' %>
 
     <%= f.radio_button :min_mounting_height, 'min_mh1d1m' %>
-    <%= f.label :min_mounting_height, '1.1m', value: 'min_mh1d1m' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh1d1m"), value: 'min_mh1d1m' %>
 
     <%= f.radio_button :min_mounting_height, 'min_mh1d8m' %>
-    <%= f.label :min_mounting_height, '1.8m', value: 'min_mh1d8m' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh1d8m"), value: 'min_mh1d8m' %>
 
     <%= f.radio_button :min_mounting_height, 'min_mh2m' %>
-    <%= f.label :min_mounting_height, '2m', value: 'min_mh2m' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh2m"), value: 'min_mh2m' %>
 
     <%= f.radio_button :min_mounting_height, 'min_mh2d5m' %>
-    <%= f.label :min_mounting_height, '2.5m', value: 'min_mh2d5m' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh2d5m"), value: 'min_mh2d5m' %>
 
     <%= f.radio_button :min_mounting_height, 'min_mh4m' %>
-    <%= f.label :min_mounting_height, '4m', value: 'min_mh4m' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh4m"), value: 'min_mh4m' %>
 
     <%= f.radio_button :min_mounting_height, 'min_mh_not_mention' %>
-    <%= f.label :min_mounting_height, 'Not mention', value: 'min_mh_not_mention' %>
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh_not_mention"), value: 'min_mh_not_mention' %>
 
     <%= f.radio_button :min_mounting_height, 'other_min_mounting_height' %>
-    <%= f.label :min_mounting_height, 'Others', value: 'other_min_mounting_height' %>
+    <%= f.label :min_mounting_height, t("product.column.other.title"), value: 'other_min_mounting_height' %>
     <%= f.text_field :min_mounting_height_text %>
   </div>
 
   <%# IP 單選%>
   <div>
-    <%= f.label :ip, 'IP:' %>
+    <%= f.label :ip, t("product.column.ip.title") + ':' %>
 
     <%= f.radio_button :ip, 'ip20' %>
-    <%= f.label :ip, 'IP20', value: 'ip20' %>
+    <%= f.label :ip, t("product.column.ip.ip20"), value: 'ip20' %>
 
     <%= f.radio_button :ip, 'ip40' %>
-    <%= f.label :ip, 'IP40', value: 'ip40' %>
+    <%= f.label :ip, t("product.column.ip.ip40"), value: 'ip40' %>
 
     <%= f.radio_button :ip, 'ip44' %>
-    <%= f.label :ip, 'IP44', value: 'ip44' %>
+    <%= f.label :ip, t("product.column.ip.ip44"), value: 'ip44' %>
 
     <%= f.radio_button :ip, 'ip45' %>
-    <%= f.label :ip, 'IP45', value: 'ip45' %>
+    <%= f.label :ip, t("product.column.ip.ip45"), value: 'ip45' %>
 
     <%= f.radio_button :ip, 'ip50' %>
-    <%= f.label :ip, 'IP50', value: 'ip50' %>
+    <%= f.label :ip, t("product.column.ip.ip50"), value: 'ip50' %>
 
     <%= f.radio_button :ip, 'ip54' %>
-    <%= f.label :ip, 'IP54', value: 'ip54' %>
+    <%= f.label :ip, t("product.column.ip.ip54"), value: 'ip54' %>
 
     <%= f.radio_button :ip, 'ip55' %>
-    <%= f.label :ip, 'IP55', value: 'ip55' %>
+    <%= f.label :ip, t("product.column.ip.ip55"), value: 'ip55' %>
 
     <%= f.radio_button :ip, 'ip60' %>
-    <%= f.label :ip, 'IP60', value: 'ip60' %>
+    <%= f.label :ip, t("product.column.ip.ip60"), value: 'ip60' %>
 
     <%= f.radio_button :ip, 'ip65' %>
-    <%= f.label :ip, 'IP65', value: 'ip65' %>
+    <%= f.label :ip, t("product.column.ip.ip65"), value: 'ip65' %>
 
     <%= f.radio_button :ip, 'ip66' %>
-    <%= f.label :ip, 'IP66', value: 'ip66' %>
+    <%= f.label :ip, t("product.column.ip.ip66"), value: 'ip66' %>
 
     <%= f.radio_button :ip, 'other_ip' %>
-    <%= f.label :ip, 'Others', value: 'other_ip' %>
+    <%= f.label :ip, t("product.column.other.title"), value: 'other_ip' %>
     <%= f.text_field :ip_text %>
   </div>
 
   <%# Class 單選%>
   <div>
-    <%= f.label :ip_class, 'Class:' %>
+    <%= f.label :ip_class, t("product.column.ip_class.title") + ':' %>
 
     <%= f.radio_button :ip_class, 'i' %>
-    <%= f.label :ip_class, 'I', value: 'i' %>
+    <%= f.label :ip_class, t("product.column.ip_class.i"), value: 'i' %>
 
     <%= f.radio_button :ip_class, 'ii' %>
-    <%= f.label :ip_class, 'II', value: 'ii' %>
+    <%= f.label :ip_class, t("product.column.ip_class.ii"), value: 'ii' %>
 
     <%= f.radio_button :ip_class, 'iii' %>
-    <%= f.label :ip_class, 'II', value: 'iii' %>
+    <%= f.label :ip_class, t("product.column.ip_class.iii"), value: 'iii' %>
 
 
     <%= f.radio_button :ip_class, 'other_ip_class' %>
-    <%= f.label :ip_class, 'Others', value: 'other_ip_class' %>
+    <%= f.label :ip_class, t("product.column.other.title"), value: 'other_ip_class' %>
     <%= f.text_field :ip_class_text %>
   </div>
 
   <%# Lowest ambient temperature 單選%>
   <div>
-    <%= f.label :lowest_ambient_temperature, 'Lowest ambient temperature:' %>
+    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.title") + ':' %>
 
     <%= f.radio_button :lowest_ambient_temperature, 'latn25' %>
-    <%= f.label :lowest_ambient_temperature, '-25˚', value: 'latn25' %>
+    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.latn25"), value: 'latn25' %>
 
     <%= f.radio_button :lowest_ambient_temperature, 'latn20' %>
-    <%= f.label :lowest_ambient_temperature, '-20˚', value: 'latn20' %>
+    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.latn20"), value: 'latn20' %>
 
     <%= f.radio_button :lowest_ambient_temperature, 'latn10' %>
-    <%= f.label :lowest_ambient_temperature, '10˚', value: 'latn10' %>
+    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.latn10"), value: 'latn10' %>
 
     <%= f.radio_button :lowest_ambient_temperature, 'lat0' %>
-    <%= f.label :lowest_ambient_temperature, '0˚', value: 'lat0' %>
+    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.lat0"), value: 'lat0' %>
 
     <%= f.radio_button :lowest_ambient_temperature, 'other_lowest_ambient_temperature' %>
-    <%= f.label :lowest_ambient_temperature, 'Others', value: 'other_lowest_ambient_temperature' %>
+    <%= f.label :lowest_ambient_temperature, t("product.column.other.title"), value: 'other_lowest_ambient_temperature' %>
     <%= f.text_field :lowest_ambient_temperature_text %>
   </div>
 
   <%# Higest ambient temperature 單選%>
   <div>
-    <%= f.label :highest_ambient_temperature, 'Highest ambient temperature:' %>
+    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.title") + ':' %>
 
     <%= f.radio_button :highest_ambient_temperature, 'hat40' %>
-    <%= f.label :highest_ambient_temperature, '40˚', value: 'hat40' %>
+    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat40"), value: 'hat40' %>
 
     <%= f.radio_button :highest_ambient_temperature, 'hat45' %>
-    <%= f.label :highest_ambient_temperature, '45˚', value: 'hat45' %>
+    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat45"), value: 'hat45' %>
 
     <%= f.radio_button :highest_ambient_temperature, 'hat50' %>
-    <%= f.label :highest_ambient_temperature, '50˚', value: 'hat50' %>
+    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat50"), value: 'hat50' %>
 
     <%= f.radio_button :highest_ambient_temperature, 'hat55' %>
-    <%= f.label :highest_ambient_temperature, '55˚', value: 'hat55' %>
+    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat55"), value: 'hat55' %>
 
     <%= f.radio_button :highest_ambient_temperature, 'other_highest_ambient_temperature' %>
-    <%= f.label :highest_ambient_temperature, 'Others', value: 'other_highest_ambient_temperature' %>
+    <%= f.label :highest_ambient_temperature, t("product.column.other.title"), value: 'other_highest_ambient_temperature' %>
     <%= f.text_field :highest_ambient_temperature_text %>
   </div>
 
   <%# Min delay time 單選%>
   <div>
-    <%= f.label :min_delay_time, 'Min. delay time:' %>
+    <%= f.label :min_delay_time, t("product.column.min_delay_time.title") + ':' %>
 
     <%= f.radio_button :min_delay_time, 'min_dt10s' %>
-    <%= f.label :min_delay_time, '10 sec', value: 'min_dt10s' %>
+    <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt10s"), value: 'min_dt10s' %>
 
     <%= f.radio_button :min_delay_time, 'min_dt15s' %>
-    <%= f.label :min_delay_time, '15 sec', value: 'min_dt15s' %>
+    <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt15s"), value: 'min_dt15s' %>
 
     <%= f.radio_button :min_delay_time, 'min_dt1m' %>
-    <%= f.label :min_delay_time, '1 min', value: 'min_dt1m' %>
+    <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt1m"), value: 'min_dt1m' %>
 
     <%= f.radio_button :min_delay_time, 'min_dt5m' %>
-    <%= f.label :min_delay_time, '5 min', value: 'min_dt5m' %>
+    <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt5m"), value: 'min_dt5m' %>
 
     <%= f.radio_button :min_delay_time, 'other_min_delay_time' %>
-    <%= f.label :min_delay_time, 'Others', value: 'other_min_delay_time' %>
+    <%= f.label :min_delay_time, t("product.column.other.title"), value: 'other_min_delay_time' %>
     <%= f.text_field :min_delay_time_text %>
   </div>
 
   <%# Max delay time 單選%>
   <div>
-    <%= f.label :max_delay_time, 'max. delay time:' %>
+    <%= f.label :max_delay_time, t("product.column.max_delay_time.title") + ':' %>
 
     <%= f.radio_button :max_delay_time, 'max_dt30m' %>
-    <%= f.label :max_delay_time, '30 min', value: 'max_dt30m' %>
+    <%= f.label :max_delay_time, t("product.column.max_delay_time.max_dt30m"), value: 'max_dt30m' %>
 
     <%= f.radio_button :max_delay_time, 'max_dt60m' %>
-    <%= f.label :max_delay_time, '60 min', value: 'max_dt60m' %>
+    <%= f.label :max_delay_time, t("product.column.max_delay_time.max_dt60m"), value: 'max_dt60m' %>
 
     <%= f.radio_button :max_delay_time, 'max_dt120m' %>
-    <%= f.label :max_delay_time, '120 min', value: 'max_dt120m' %>
+    <%= f.label :max_delay_time, t("product.column.max_delay_time.max_dt120m"), value: 'max_dt120m' %>
 
     <%= f.radio_button :max_delay_time, 'other_max_delay_time' %>
-    <%= f.label :max_delay_time, 'Others', value: 'other_max_delay_time' %>
+    <%= f.label :max_delay_time, t("product.column.other.title"), value: 'other_max_delay_time' %>
     <%= f.text_field :max_delay_time_text %>
   </div>
 
   <%# Lowest lux 單選%>
   <div>
-    <%= f.label :lowest_lux, 'Lowest lux:' %>
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.title") + ':' %>
 
     <%= f.radio_button :lowest_lux, 'lux0' %>
-    <%= f.label :lowest_lux, '0', value: 'lux0' %>
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.lux0"), value: 'lux0' %>
 
     <%= f.radio_button :lowest_lux, 'lux2' %>
-    <%= f.label :lowest_lux, '2 lux', value: 'lux2' %>
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.lux2"), value: 'lux2' %>
 
     <%= f.radio_button :lowest_lux, 'lux5' %>
-    <%= f.label :lowest_lux, '5 lux', value: 'lux5' %>
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.lux5"), value: 'lux5' %>
 
     <%= f.radio_button :lowest_lux, 'lux10' %>
-    <%= f.label :lowest_lux, '10 lux', value: 'lux10' %>
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.lux10"), value: 'lux10' %>
 
     <%= f.radio_button :lowest_lux, 'lux20' %>
-    <%= f.label :lowest_lux, '20 lux', value: 'lux20' %>
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.lux20"), value: 'lux20' %>
 
     <%= f.radio_button :lowest_lux, 'other_lowest_lux_text' %>
-    <%= f.label :lowest_lux, 'Others', value: 'other_lowest_lux_text' %>
+    <%= f.label :lowest_lux, t("product.column.other.title"), value: 'other_lowest_lux_text' %>
     <%= f.text_field :lowest_lux_text %>
   </div>
 
   <%# Highest lux 單選%>
   <div>
-    <%= f.label :highest_lux, 'Highest lux:' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.title") + ':' %>
 
     <%= f.radio_button :highest_lux, 'lux500' %>
-    <%= f.label :highest_lux, '500 lux', value: 'lux500' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux500"), value: 'lux500' %>
 
     <%= f.radio_button :highest_lux, 'lux1000' %>
-    <%= f.label :highest_lux, '1000 lux', value: 'lux1000' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux1000"), value: 'lux1000' %>
 
     <%= f.radio_button :highest_lux, 'lux1500' %>
-    <%= f.label :highest_lux, '1500 lux', value: 'lux1500' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux1500"), value: 'lux1500' %>
 
     <%= f.radio_button :highest_lux, 'lux2000' %>
-    <%= f.label :highest_lux, '2000 lux', value: 'lux2000' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux2000"), value: 'lux2000' %>
 
     <%= f.radio_button :highest_lux, 'lux2500' %>
-    <%= f.label :highest_lux, '2500 lux', value: 'lux2500' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux2500"), value: 'lux2500' %>
 
     <%= f.radio_button :highest_lux, 'lux3000' %>
-    <%= f.label :highest_lux, '3000 lux', value: 'lux3000' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux3000"), value: 'lux3000' %>
 
     <%= f.radio_button :highest_lux, 'lux_infinity' %>
-    <%= f.label :highest_lux, '∞', value: 'lux_infinity' %>
+    <%= f.label :highest_lux, t("product.column.highest_lux.lux_infinity"), value: 'lux_infinity' %>
 
     <%= f.radio_button :highest_lux, 'other_highest_lux' %>
-    <%= f.label :highest_lux, 'Others', value: 'other_highest_lux' %>
+    <%= f.label :highest_lux, t("product.column.other.title"), value: 'other_highest_lux' %>
     <%= f.text_field :highest_lux_text %>
   </div>
 
   <%# Lux learning 單選 boolean%>
   <div>
-    <%= f.label :lux_learning, 'Lux learning:' %>
+    <%= f.label :lux_learning, t("prodcut.lux_learning.title") + ':' %>
     <%= f.check_box :lux_learning %>
-    <%= f.label :lux_learning, 'Yes'%>
+    <%= f.label :lux_learning, t("product.column.lux_learning.ll_yes") %>
   </div>
 
   <%# Mounting type 複選 %>
   <div>
-    <%= f.label :bluetooth, 'Mounting type:'%>
+    <%= f.label :mounting_type, t("product.column.mounting_type.title") + ':'%>
 
     <%= f.check_box :surface %>
-    <%= f.label :surface, 'Surface mount'%>
+    <%= f.label :surface, t("product.column.mounting_type.surface") %>
 
     <%= f.check_box :flush %>
-    <%= f.label :flush, 'Flush mount' %>
+    <%= f.label :flush, t("product.column.mounting_type.flush") %>
 
     <%= f.check_box :wall %>
-    <%= f.label :wall, 'Wall mount' %>
+    <%= f.label :wall, t("product.column.mounting_type.wall") %>
 
     <%= f.check_box :ceiling %>
-    <%= f.label :ceiling, 'Ceiling mount' %>
+    <%= f.label :ceiling, t("product.column.mounting_type.ceiling") %>
 
     <%= f.check_box :other_mounting_type %>
-    <%= f.label :other_mounting_type, 'Others' %>
+    <%= f.label :other_mounting_type, t("product.column.other.title") %>
     <%= f.text_field :mounting_type_text %>
   </div>
 
   <%# Application 複選 %>
   <div>
-    <%= f.label :application, 'Application:'%>
+    <%= f.label :application, t("product.column.application.title") + ':'%>
 
     <%= f.check_box :office %>
-    <%= f.label :office, 'Office'%>
+    <%= f.label :office, t("product.column.application.office") %>
 
     <%= f.check_box :hospital %>
-    <%= f.label :hospital, 'Hospital' %>
+    <%= f.label :hospital, t("product.column.application.hospital") %>
 
     <%= f.check_box :corridor %>
-    <%= f.label :corridor, 'Corridor' %>
+    <%= f.label :corridor, t("product.column.application.corridor") %>
 
     <%= f.check_box :hallway %>
-    <%= f.label :hallway, 'Hallway' %>
+    <%= f.label :hallway, t("product.column.application.hallway") %>
 
     <%= f.check_box :aisle %>
-    <%= f.label :aisle, 'Aisle' %>
+    <%= f.label :aisle, t("product.column.application.aisle") %>
 
     <%= f.check_box :car_park %>
-    <%= f.label :car_park, 'Car park' %>
+    <%= f.label :car_park, t("product.column.application.car_park") %>
 
     <%= f.check_box :storage %>
-    <%= f.label :storage, 'Storage' %>
+    <%= f.label :storage, t("product.column.application.storage") %>
 
     <%= f.check_box :underground_garages %>
-    <%= f.label :underground_garages, 'Underground garages' %>
+    <%= f.label :underground_garages, t("product.column.application.underground_garages") %>
 
     <%= f.check_box :outdoor %>
-    <%= f.label :outdoor, 'Outdoor' %>
+    <%= f.label :outdoor, t("product.column.application.outdoor") %>
 
     <%= f.check_box :schools %>
-    <%= f.label :schools, 'Schools' %>
+    <%= f.label :schools, t("product.column.application.schools") %>
 
     <%= f.check_box :conference_rooms %>
-    <%= f.label :conference_rooms, 'Conference rooms' %>
+    <%= f.label :conference_rooms, t("product.column.application.conference_rooms") %>
 
     <%= f.check_box :warehouses %>
-    <%= f.label :warehouses, 'Warehouses' %>
+    <%= f.label :warehouses, t("product.column.application.warehouses") %>
 
     <%= f.check_box :staircases %>
-    <%= f.label :staircases, 'Staircases' %>
+    <%= f.label :staircases, t("product.column.application.staircases") %>
 
     <%= f.check_box :industrial_halls %>
-    <%= f.label :industrial_halls, 'Industrial halls' %>
+    <%= f.label :industrial_halls, t("product.column.application.industrial_halls") %>
 
     <%= f.check_box :emergency_power_supply_networks %>
-    <%= f.label :emergency_power_supply_networks, 'Emergency power supply networks' %>
+    <%= f.label :emergency_power_supply_networks, t("product.column.application.emergency_power_supply_networks") %>
 
     <%= f.check_box :toilets %>
-    <%= f.label :toilets, 'Toilets' %>
+    <%= f.label :toilets, t("product.column.application.toilets") %>
 
     <%= f.check_box :other_application %>
-    <%= f.label :other_application, 'Others' %>
+    <%= f.label :other_application, t("product.column.other.title") %>
     <%= f.text_field :application_text %>
   </div>
 
   <%# Slave 單選%>
   <div>
-    <%= f.label :slave, 'Slave:' %>
+    <%= f.label :slave, t("product.column.slave.title") + ':' %>
 
     <%= f.radio_button :slave, 's_yes' %>
-    <%= f.label :slave, 'Yes', value: 's_yes' %>
+    <%= f.label :slave, t("product.column.slave.s_yes"), value: 's_yes' %>
 
     <%= f.radio_button :slave, 's_no' %>
-    <%= f.label :slave, 'No', value: 's_no' %>
+    <%= f.label :slave, t("product.column.slave.s_no"), value: 's_no' %>
 
     <%= f.radio_button :slave, 's_not_mention' %>
-    <%= f.label :slave, 'Not mention', value: 's_not_mention' %>
+    <%= f.label :slave, t("product.column.slave.s_not_mention"), value: 's_not_mention' %>
   </div>
 
   <%# Mixed light measurement 單選%>
   <div>
-    <%= f.label :mixed_light_measurement, 'Mixed light measurement:' %>
+    <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.title") + ':' %>
 
     <%= f.radio_button :mixed_light_measurement, 'mlm_yes' %>
-    <%= f.label :mixed_light_measurement, 'Yes', value: 'mlm_yes' %>
+    <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.mlm_yes"), value: 'mlm_yes' %>
 
     <%= f.radio_button :mixed_light_measurement, 'mlm_no' %>
-    <%= f.label :mixed_light_measurement, 'No', value: 'mlm_no' %>
+    <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.mlm_no"), value: 'mlm_no' %>
 
     <%= f.radio_button :mixed_light_measurement, 'mlm_not_mention' %>
-    <%= f.label :mixed_light_measurement, 'Not mention', value: 'mlm_not_mention' %>
+    <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.mlm_not_mention"), value: 'mlm_not_mention' %>
   </div>
 
   <%# Dimmable(Constant light) 單選%>
   <div>
-    <%= f.label :dimmable_constant_light, 'Dimmable(Constant light):' %>
+    <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.title") + ':' %>
 
     <%= f.radio_button :dimmable_constant_light, 'dcl_yes' %>
-    <%= f.label :dimmable_constant_light, 'Yes', value: 'dcl_yes' %>
+    <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.dcl_yes"), value: 'dcl_yes' %>
 
     <%= f.radio_button :dimmable_constant_light, 'dcl_no' %>
-    <%= f.label :dimmable_constant_light, 'No', value: 'dcl_no' %>
+    <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.dcl_no"), value: 'dcl_no' %>
 
     <%= f.radio_button :dimmable_constant_light, 'dcl_not_mention' %>
-    <%= f.label :dimmable_constant_light, 'Not mention', value: 'dcl_not_mention' %>
+    <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.dcl_not_mention"), value: 'dcl_not_mention' %>
   </div>
   
   <%# Stand-by light 單選%>
   <div>
-    <%= f.label :stand_by_light, 'Stand-by light:' %>
+    <%= f.label :stand_by_light, t("product.column.stand_by_light.title") + ':' %>
 
     <%= f.radio_button :stand_by_light, 'sbl_no' %>
-    <%= f.label :stand_by_light, 'No', value: 'sbl_no' %>
+    <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl_no"), value: 'sbl_no' %>
 
     <%= f.radio_button :stand_by_light, 'sbl10p' %>
-    <%= f.label :stand_by_light, '10%', value: 'sbl10p' %>
+    <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl10p"), value: 'sbl10p' %>
 
     <%= f.radio_button :stand_by_light, 'sbl10_40p' %>
-    <%= f.label :stand_by_light, '10-40%', value: 'sbl10_40p' %>
+    <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl10_40p"), value: 'sbl10_40p' %>
 
     <%= f.radio_button :stand_by_light, 'sbl10_50p' %>
-    <%= f.label :stand_by_light, '10-50%', value: 'sbl10_50p' %>
+    <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl10_50p"), value: 'sbl10_50p' %>
 
     <%= f.radio_button :stand_by_light, 'other_stand_by_light' %>
-    <%= f.label :stand_by_light, 'Others', value: 'other_stand_by_light' %>
+    <%= f.label :stand_by_light, t("product.column.other.title"), value: 'other_stand_by_light' %>
     <%= f.text_field :stand_by_light_text %>
   </div>
 
   <%# Push-button connectable 單選%>
   <div>
-    <%= f.label :push_button_connectable, 'Push-button connectable:' %>
+    <%= f.label :push_button_connectable, t("product.column.push_button_connectable.title") + ':' %>
 
     <%= f.radio_button :push_button_connectable, 'pbc_yes' %>
-    <%= f.label :push_button_connectable, 'Yes', value: 'pbc_yes' %>
+    <%= f.label :push_button_connectable, t("product.column.push_button_connectable.pbc_yes"), value: 'pbc_yes' %>
 
     <%= f.radio_button :push_button_connectable, 'pbc_no' %>
-    <%= f.label :push_button_connectable, 'No', value: 'pbc_no' %>
+    <%= f.label :push_button_connectable, t("product.column.push_button_connectable.pbc_no"), value: 'pbc_no' %>
 
     <%= f.radio_button :push_button_connectable, 'pbc_not_mention' %>
-    <%= f.label :push_button_connectable, 'Not mention', value: 'pbc_not_mention' %>
+    <%= f.label :push_button_connectable, t("product.column.push_button_connectable.pbc_not_mention"), value: 'pbc_not_mention' %>
   </div>
 
   <%# Orientation light 單選%>
   <div>
-    <%= f.label :orientation_light, 'Orientation light:' %>
+    <%= f.label :orientation_light, t("product.column.orientation_light.title") + ':' %>
 
     <%= f.radio_button :orientation_light, 'ol_yes' %>
-    <%= f.label :orientation_light, 'Yes', value: 'ol_yes' %>
+    <%= f.label :orientation_light, t("product.column.orientation_light.ol_yes"), value: 'ol_yes' %>
 
     <%= f.radio_button :orientation_light, 'ol_no' %>
-    <%= f.label :orientation_light, 'No', value: 'ol_no' %>
+    <%= f.label :orientation_light, t("product.column.orientation_light.ol_no"), value: 'ol_no' %>
 
     <%= f.radio_button :orientation_light, 'ol_not_mention' %>
-    <%= f.label :orientation_light, 'Not mention', value: 'ol_not_mention' %>
+    <%= f.label :orientation_light, t("product.column.orientation_light.ol_not_mention"), value: 'ol_not_mention' %>
   </div>
 
   <%# Bluetooth 複選 %>
   <div>
-    <%= f.label :bluetooth, 'Bluetooth:'%>
+    <%= f.label :bluetooth, t("product.column.bluetooth.title") + ':'%>
 
     <%= f.check_box :not_availablel %>
-    <%= f.label :not_availablel, 'Not availablel'%>
+    <%= f.label :not_availablel, t("product.column.bluetooth.not_availablel") %>
 
     <%= f.check_box :bluetooth_4dx %>
-    <%= f.label :bluetooth_4dx, 'Bluetooth 4.x' %>
+    <%= f.label :bluetooth_4dx, t("product.column.bluetooth.bluetooth_4dx") %>
 
     <%= f.check_box :bluetooth_5d0 %>
-    <%= f.label :bluetooth_5d0, 'Bluetooth 5.0' %>
+    <%= f.label :bluetooth_5d0, t("product.column.bluetooth.bluetooth_5d0") %>
 
     <%= f.check_box :bluetooth_mesh %>
-    <%= f.label :bluetooth_mesh, 'Bluetooth mesh' %>
+    <%= f.label :bluetooth_mesh, t("product.column.bluetooth.bluetooth_mesh") %>
 
     <%= f.check_box :other_bluetooth %>
-    <%= f.label :other_bluetooth, 'Others' %>
+    <%= f.label :other_bluetooth, t("product.column.other.title") %>
     <%= f.text_field :bluetooth_text %>
   </div>
 
   <%# Description	段落 %>
   <div>
-    <%= f.label :description, 'Description' %>
+    <%= f.label :description, t("product.column.description.title") %>
     <%= f.text_area :description %>
   </div>
 
   <div>
-    <%= f.submit %>
-    <%= link_to 'Cancel', products_path %>
+    <%= f.submit t("product.button.create") %>
+    <%= link_to t("product.button.cancel"), products_path %>
   </div>
 <% end %>
