@@ -10,22 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_13_155210) do
+ActiveRecord::Schema.define(version: 2020_03_18_130246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "products", force: :cascade do |t|
-    t.integer "brand", default: 0
+    t.integer "brand"
     t.string "brand_text"
     t.string "article_no"
-    t.integer "gateway", default: 0, null: false
+    t.integer "gateway"
     t.integer "execution"
     t.string "execution_text"
-    t.integer "sensor_tech", default: 0, null: false
+    t.integer "sensor_tech"
     t.string "sensor_tech_text"
     t.string "dimension"
-    t.integer "voltage", default: 0, null: false
+    t.integer "voltage"
     t.string "voltage_text"
     t.integer "two_channel"
     t.string "two_channel_text"
@@ -72,9 +72,9 @@ ActiveRecord::Schema.define(version: 2020_03_13_155210) do
     t.integer "highest_lux"
     t.string "highest_lux_text"
     t.boolean "lux_learning"
-    t.integer "mounting_type", default: 0, null: false
+    t.integer "mounting_type"
     t.string "mounting_type_text"
-    t.integer "application", default: 0, null: false
+    t.integer "application"
     t.string "application_text"
     t.integer "slave"
     t.integer "mixed_light_measurement"
@@ -83,7 +83,7 @@ ActiveRecord::Schema.define(version: 2020_03_13_155210) do
     t.string "stand_by_light_text"
     t.integer "push_button_connectable"
     t.integer "orientation_light"
-    t.integer "bluetooth", default: 0, null: false
+    t.integer "bluetooth"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
