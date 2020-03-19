@@ -34,16 +34,16 @@ en:
         title: 'Dimension'
       voltage:
         title: 'Voltage'
-        vdc12: '12VDC'
-        vdc24: 'VDC24'
-        vac110: '110VAC'
-        vac110_230: '110-230VAC'
-        vac220_240: '220-240VAC'
-        v230: '230V'
-        vdc21_30: '21-30VDC(KNX bus)'
-        vdc9_22: '9.5-22.5VDC(DALI bus)'
-        vdc12_36: '12-36VDC'
-        vdc12_48: '12-48VDC'
+        vdc12: '12 VDC'
+        vdc24: '24 VDC'
+        vac110: '110 VAC'
+        vac110_230: '110-230 VAC'
+        vac220_240: '220-240 VAC'
+        v230: '230 V'
+        vdc21_30: '21-30 VDC(KNX bus)'
+        vdc9_22: '9.5-22.5 VDC(DALI bus)'
+        vdc12_36: '12-36 VDC'
+        vdc12_48: '12-48 VDC'
       two_channel:
         title: '2 Channel'
         no_channel: 'No'
@@ -214,7 +214,8 @@ en:
         lux_infinity: '∞'
       lux_learning:
         title: 'Lux learning'
-        ll_yes: 'Yes'
+        is_true: 'Yes'
+        is_false: 'No'
       mounting_type:
         title: 'Mounting type'
         surface: 'Surface mount'
@@ -272,12 +273,12 @@ en:
         ol_not_mention: 'Not mention'
       bluetooth:
         title: 'Bluetooth'
-      description:
-        title: 'Description'
         not_availablel: 'Not availablel'
         bluetooth_4dx: 'Bluetooth 4.x'
         bluetooth_5d0: 'Bluetooth 5.0'
         bluetooth_mesh: 'Bluetooth mesh'
+      description:
+        title: 'Description'
     button:
       create: 'Create Product'
       edit: 'Edit'
@@ -286,5 +287,6 @@ en:
       delete: 'Delete'
     page:
       headline:
-        new: 'New Store'
-        edit: 'Edit Store'
+        index: 'Product List'
+        new: 'New Product'
+        edit: 'Edit Product'

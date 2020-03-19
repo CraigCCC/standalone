@@ -1,923 +1,934 @@
-<div>
-  <% if product.errors.any? %>
+<% if product.errors.any? %>
+  <ul>
     <% product.errors.full_messages.each do |message| %>
       <li><%= message %></li>
     <% end %>
-  <% end %>
-</div>
+  </ul>
+<% end %>
 
-<%= form_with model: product, local: true do |f| %>
+<%= form_with model: product, local: true do |f| %> 
 
   <%# brand 單選%>
-  <div>
-    <%= f.label :brand, t("product.column.brand.title")+ ':' %>
-
-    <%= f.radio_button :brand, 'beg' %>
-    <%= f.label :brand, t("product.column.brand.beg"), value: 'beg' %>
-
-    <%= f.radio_button :brand, 'esylux' %>
-    <%= f.label :brand, t("product.column.brand.esylux"), value: 'esylux' %>
-
-    <%= f.radio_button :brand, 'steinel' %>
-    <%= f.label :brand, t("product.column.brand.steinel"), value: 'steinel' %>
-
-    <%= f.radio_button :brand, 'cp' %>
-    <%= f.label :brand, t("product.column.brand.cp"), value: 'cp' %>
+  <div class="field">
+    <%= f.label :brand, t("product.column.brand.title")+ ':', class: 'label' %>
+    <div class="control">
+      <%= f.radio_button :brand, 'beg', class: 'is-checkradio is-info' %>
+      <%= f.label :brand, t("product.column.brand.beg"), value: 'beg' %>
     
-    <%= f.radio_button :brand, 'theben' %>
-    <%= f.label :brand, t("product.column.brand.theben"), value: 'theben' %>
 
-    <%= f.radio_button :brand, 'other_brand' %>
-    <%= f.label :brand, t("product.column.other.title"), value: 'other_brand' %>
-    <%= f.text_field :brand_text %>
+      <%= f.radio_button :brand, 'esylux', class: 'is-checkradio is-info' %>
+      <%= f.label :brand, t("product.column.brand.esylux"), value: 'esylux' %>
+
+      <%= f.radio_button :brand, 'steinel', class: 'is-checkradio is-info' %>
+      <%= f.label :brand, t("product.column.brand.steinel"), value: 'steinel' %>
+
+      <%= f.radio_button :brand, 'cp', class: 'is-checkradio is-info' %>
+      <%= f.label :brand, t("product.column.brand.cp"), value: 'cp' %>
+      
+      <%= f.radio_button :brand, 'theben', class: 'is-checkradio is-info' %>
+      <%= f.label :brand, t("product.column.brand.theben"), value: 'theben' %>
+
+      <%= f.radio_button :brand, 'other_brand', class: 'is-checkradio is-danger' %>
+      <%= f.label :brand, t("product.column.other.title"), value: 'other_brand' %>
+      <%= f.text_field :brand_text, class: 'input is-inline is-small' %>
+    </div>
   </div>
 
   <%# article_no%>
-  <div>
-    <%= f.label :article_no, t("product.column.article_no.title") + ':' %>
-    <%= f.text_field :article_no%>
+  <div class="field">
+    <%= f.label :article_no, t("product.column.article_no.title") + ':', class: 'label' %>
+      <div class="control">
+        <%= f.text_field :article_no, class: 'input is-inline is-small' %>
+      </div>
   </div>
 
   <%# gateway_type 複選%>
-  <div>
-    <%= f.label :gateway, t("product.column.gateway.title") + ':' %>
-
-    <%= f.check_box :knx %>
-    <%= f.label :knx, t("product.column.gateway.knx") %>
-
-    <%= f.check_box :dali_addressble %>
-    <%= f.label :dali_addressble, t("product.column.gateway.dali_addressble") %>
-
-    <%= f.check_box :dali_broadcast %>
-    <%= f.label :dali_broadcast, t("product.column.gateway.dali_broadcast") %>
-
-    <%= f.check_box :standalone %>
-    <%= f.label :standalone, t("product.column.gateway.standalone") %>
-
-    <%= f.check_box :proprietary_system %>
-    <%= f.label :proprietary_system, t("product.column.gateway.proprietary_system") %>
-
-    <%= f.check_box :other_type %>
-    <%= f.label :other_type, t("product.column.other.title") %>
-    <%= f.text_field :type_text %>
-
+  <div class="field">
+    <%= f.label :gateway, t("product.column.gateway.title") + ':', class: 'label' %>
+    <div class="control">
+      <%= f.check_box :knx, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :knx, t("product.column.gateway.knx") %>
+  
+      <%= f.check_box :dali_addressble, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :dali_addressble, t("product.column.gateway.dali_addressble") %>
+  
+      <%= f.check_box :dali_broadcast, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :dali_broadcast, t("product.column.gateway.dali_broadcast") %>
+  
+      <%= f.check_box :standalone , class: 'is-checkradio is-block is-info'%>
+      <%= f.label :standalone, t("product.column.gateway.standalone") %>
+  
+      <%= f.check_box :proprietary_system, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :proprietary_system, t("product.column.gateway.proprietary_system") %>
+  
+      <%= f.check_box :other_type, class: 'is-checkradio is-block is-danger' %>
+      <%= f.label :other_type, t("product.column.other.title") %>
+      <%= f.text_field :gateway_text, class: 'input is-inline is-small' %>
+    </div>
   </div>
 
   <%# Execution  單選  Motion sensor  Presence sensor Not mention Others(簡答) %>
-  <div>
-    <%= f.label :execution, t("product.column.execution.title") + ':' %>
-
-    <%= f.radio_button :execution, 'motion_sensor' %>
-    <%= f.label :execution, t("product.column.execution.motion_sensor"), value: 'motion_sensor' %>
-
-    <%= f.radio_button :execution, 'presence_sensor' %>
-    <%= f.label :execution, t("product.column.execution.presence_sensor"), value: 'presence_sensor' %>
-
-    <%= f.radio_button :execution, 'not_mention' %>
-    <%= f.label :execution, t("product.column.execution.not_mention"), value: 'not_mention' %>
-
-    <%= f.radio_button :execution, 'other_execution' %>
-    <%= f.label :execution, t("product.column.other.title"), value: 'other_execution' %>
-    <%= f.text_field :execution_text %>
+  <div class="field">
+    <%= f.label :execution, t("product.column.execution.title") + ':', class: 'label' %>
+    <div class="control">
+      <%= f.radio_button :execution, 'motion_sensor', class: 'is-checkradio is-info' %>
+      <%= f.label :execution, t("product.column.execution.motion_sensor"), value: 'motion_sensor' %>
+  
+      <%= f.radio_button :execution, 'presence_sensor', class: 'is-checkradio is-info' %>
+      <%= f.label :execution, t("product.column.execution.presence_sensor"), value: 'presence_sensor' %>
+  
+      <%= f.radio_button :execution, 'not_mention', class: 'is-checkradio is-info' %>
+      <%= f.label :execution, t("product.column.execution.not_mention"), value: 'not_mention' %>
+  
+      <%= f.radio_button :execution, 'other_execution', class: 'is-checkradio is-danger' %>
+      <%= f.label :execution, t("product.column.other.title"), value: 'other_execution' %>
+      <%= f.text_field :execution_text, class: 'input is-inline is-small' %>
+    </div>
 
   </div>
 
   <%# sensor_tech: 複選 [:other_sensor_tech, :pir, :hf, :ultrasonic]%>
-  <div>
-    <%= f.label :sensor_tech, t("product.column.sensor_tech.title") + ':' %>
-
-    <%= f.check_box :pir %>
-    <%= f.label :pir, t("product.column.sensor_tech.pir") %>
-
-    <%= f.check_box :hf %>
-    <%= f.label :hf, t("product.column.sensor_tech.hf") %>
-
-    <%= f.check_box :ultrasonic %>
-    <%= f.label :ultrasonic, t("product.column.sensor_tech.ultrasonic") %>
-
-    <%= f.check_box :other_sensor_tech %>
-    <%= f.label :other_sensor_tech, t("product.column.other.title.") %>
-    <%= f.text_field :sensor_tech_text %>
+  <div class="field">
+    <%= f.label :sensor_tech, t("product.column.sensor_tech.title") + ':', class: 'label' %>
+    <div class="control">
+      <%= f.check_box :pir, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :pir, t("product.column.sensor_tech.pir") %>
+  
+      <%= f.check_box :hf, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :hf, t("product.column.sensor_tech.hf") %>
+  
+      <%= f.check_box :ultrasonic, class: 'is-checkradio is-block is-info' %>
+      <%= f.label :ultrasonic, t("product.column.sensor_tech.ultrasonic") %>
+  
+      <%= f.check_box :other_sensor_tech, class: 'is-checkradio is-block is-danger' %>
+      <%= f.label :other_sensor_tech, t("product.column.other.title.") %>
+      <%= f.text_field :sensor_tech_text, class: 'input is-inline is-small' %>
+    </div>
   </div>
 
   <%# Dimension 簡答 %>
-  <div>
-    <%= f.label :dimension, t("product.column.dimension.title") + ':' %>
-    <%= f.text_field :dimension %>
+  <div class="field">
+    <%= f.label :dimension, t("product.column.dimension.title") + ':', class: 'label' %>
+    <div class="control">
+      <%= f.text_field :dimension, class: 'input is-inline is-small' %>
+    </div>
   </div>
 
   <%# Voltage 複選 %>
-  <div>
-    <%= f.label :voltage, t("product.column.voltage.title") + ':' %>
+  <div class="field">
+    <%= f.label :voltage, t("product.column.voltage.title") + ':', class: 'label' %>
 
-    <%= f.check_box :vdc12 %>
+    <%= f.check_box :vdc12, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vdc12, t("product.column.voltage.vdc12") %>
 
-    <%= f.check_box :vdc24 %>
+    <%= f.check_box :vdc24, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vdc24, t("product.column.voltage.vdc24") %>
 
-    <%= f.check_box :vac110 %>
+    <%= f.check_box :vac110, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vac110, t("product.column.voltage.vac110") %>
 
-    <%= f.check_box :vac110_230 %>
+    <%= f.check_box :vac110_230, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vac110_230, t("product.column.voltage.vac110_230") %>
 
-    <%= f.check_box :vac220_240 %>
+    <%= f.check_box :vac220_240, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vac220_240, t("product.column.voltage.vac220_240") %>
 
-    <%= f.check_box :v230 %>
+    <%= f.check_box :v230, class: 'is-checkradio is-block is-info' %>
     <%= f.label :v230, t("product.column.voltage.v230") %>
 
-    <%= f.check_box :vdc21_30 %>
+    <%= f.check_box :vdc21_30, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vdc21_30, t("product.column.voltage.vdc21_30") %>
 
-    <%= f.check_box :vdc9_22 %>
+    <%= f.check_box :vdc9_22, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vdc9_22, t("product.column.voltage.vdc9_22") %>
 
-    <%= f.check_box :vdc12_36 %>
+    <%= f.check_box :vdc12_36, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vdc12_36, t("product.column.voltage.vdc12_36") %>
 
-    <%= f.check_box :vdc12_48 %>
+    <%= f.check_box :vdc12_48, class: 'is-checkradio is-block is-info' %>
     <%= f.label :vdc12_48, t("product.column.voltage.vdc12_48") %>
 
-    <%= f.check_box :other_voltage %>
+    <%= f.check_box :other_voltage, class: 'is-checkradio is-block is-danger' %>
     <%= f.label :other_voltage, t("product.column.other.title") %>
-    <%= f.text_field :voltage_text %>
+    <%= f.text_field :voltage_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Two channel 單選 %>
-  <div>
-    <%= f.label :two_channel, t("product.column.two_channel.title") + ':' %>
+  <div class="field">
+    <%= f.label :two_channel, t("product.column.two_channel.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :two_channel, 'no_channel' %>
+    <%= f.radio_button :two_channel, 'no_channel', class: 'is-checkradio is-info' %>
     <%= f.label :two_channel, t("product.column.two_channel.no_channel"), value: 'no_channel' %>
 
-    <%= f.radio_button :two_channel, 'hvac' %>
+    <%= f.radio_button :two_channel, 'hvac', class: 'is-checkradio is-info' %>
     <%= f.label :two_channel, t("product.column.two_channel.hvac"), value: 'hvac' %>
 
-    <%= f.radio_button :two_channel, 'other_two_channel' %>
+    <%= f.radio_button :two_channel, 'other_two_channel', class: 'is-checkradio is-danger' %>
     <%= f.label :two_channel, t("product.column.other.title"), value: 'other_two_channel' %>
-    <%= f.text_field :two_channel_text %>
+    <%= f.text_field :two_channel_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Incandescent max 單選 %>
-  <div>
-    <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.title") + ':' %>
+  <div class="field">
+    <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :incandescent_lamp_load_max, 'w2000' %>
+    <%= f.radio_button :incandescent_lamp_load_max, 'w2000', class: 'is-checkradio is-info' %>
     <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.w2000"), value: 'w2000' %>
 
-    <%= f.radio_button :incandescent_lamp_load_max, 'w2300' %>
+    <%= f.radio_button :incandescent_lamp_load_max, 'w2300', class: 'is-checkradio is-info' %>
     <%= f.label :incandescent_lamp_load_max, t("product.column.incandescent_lamp_load_max.w2300"), value: 'w2300' %>
 
-    <%= f.radio_button :incandescent_lamp_load_max, 'other_incandescent_lamp_load_max' %>
+    <%= f.radio_button :incandescent_lamp_load_max, 'other_incandescent_lamp_load_max', class: 'is-checkradio is-danger' %>
     <%= f.label :incandescent_lamp_load_max, t("product.column.other.title"), value: 'other_incandescent_lamp_load_max' %>
-    <%= f.text_field :incandescent_lamp_load_max_text %>
+    <%= f.text_field :incandescent_lamp_load_max_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Fluorescent lamp 單選 %>
-  <div>
-    <%= f.label :fluorescent_lamp_load, t('product.fluorescent_lamp_load.title') + ':' %>
+  <div class="field">
+    <%= f.label :fluorescent_lamp_load, t('product.column.fluorescent_lamp_load.title') + ':', class: 'label' %>
 
-    <%= f.radio_button :fluorescent_lamp_load, 'fll1150va' %>
+    <%= f.radio_button :fluorescent_lamp_load, 'fll1150va', class: 'is-checkradio is-info' %>
     <%= f.label :fluorescent_lamp_load, t("product.column.fluorescent_lamp_load.fll1150va"), value: 'fll1150va' %>
 
-    <%= f.radio_button :fluorescent_lamp_load, 'other_fluorescent_lamp_load' %>
+    <%= f.radio_button :fluorescent_lamp_load, 'other_fluorescent_lamp_load', class: 'is-checkradio is-danger' %>
     <%= f.label :fluorescent_lamp_load, t("product.column.other.title"), value: 'other_fluorescent_lamp_load' %>
-    <%= f.text_field :fluorescent_lamp_load_text %>
+    <%= f.text_field :fluorescent_lamp_load_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Led lamp load max 單選 %>
-  <div>
-    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.title") + ':' %>
+  <div class="field">
+    <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :led_lamp_load_max, 'max_lll150w' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll150w', class: 'is-checkradio is-info' %>
     <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll150w"), value: 'max_lll150w' %>
 
-    <%= f.radio_button :led_lamp_load_max, 'max_lll200w' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll200w', class: 'is-checkradio is-info' %>
     <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll200w"), value: 'max_lll200w' %>
 
-    <%= f.radio_button :led_lamp_load_max, 'max_lll300w' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll300w', class: 'is-checkradio is-info' %>
     <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll300w"), value: 'max_lll300w' %>
 
-    <%= f.radio_button :led_lamp_load_max, 'max_lll400w' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll400w', class: 'is-checkradio is-info' %>
     <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll400w"), value: 'max_lll400w' %>
 
-    <%= f.radio_button :led_lamp_load_max, 'max_lll500w' %>
+    <%= f.radio_button :led_lamp_load_max, 'max_lll500w', class: 'is-checkradio is-info' %>
     <%= f.label :led_lamp_load_max, t("product.column.led_lamp_load_max.max_lll500w"), value: 'max_lll500w' %>
 
-    <%= f.radio_button :led_lamp_load_max, 'other_led_lamp_load_max' %>
+    <%= f.radio_button :led_lamp_load_max, 'other_led_lamp_load_max', class: 'is-checkradio is-danger' %>
     <%= f.label :led_lamp_load_max, t("product.column.other.title"), value: 'other_led_lamp_load_max' %>
-    <%= f.text_field :led_lamp_load_max_text %>
+    <%= f.text_field :led_lamp_load_max_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Load 簡答 %>
-  <div>
-    <%= f.label :load, t("product.column.load.title") + ':' %>
-    <%= f.text_field :load_text %>
+  <div class="field">
+    <%= f.label :load, t("product.column.load.title") + ':', class: 'label' %>
+    <%= f.text_field :load_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Power consumption 單選 %>
-  <div>
-    <%= f.label :power_consumption, t("product.column.power_consumption.title") + ':' %>
+  <div class="field">
+    <%= f.label :power_consumption, t("product.column.power_consumption.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :power_consumption, 'pc8ma' %>
+    <%= f.radio_button :power_consumption, 'pc8ma', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc8ma"), value: 'pc8ma' %>
 
-    <%= f.radio_button :power_consumption, 'pc10ma' %>
+    <%= f.radio_button :power_consumption, 'pc10ma', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc10ma"), value: 'pc10ma' %>
 
-    <%= f.radio_button :power_consumption, 'pc16ma' %>
+    <%= f.radio_button :power_consumption, 'pc16ma', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc16ma"), value: 'pc16ma' %>
 
-    <%= f.radio_button :power_consumption, 'pc03w' %>
+    <%= f.radio_button :power_consumption, 'pc03w', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc03w"), value: 'pc03w' %>
 
-    <%= f.radio_button :power_consumption, 'pc05w' %>
+    <%= f.radio_button :power_consumption, 'pc05w', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc05w"), value: 'pc05w' %>
 
-    <%= f.radio_button :power_consumption, 'pc06w' %>
+    <%= f.radio_button :power_consumption, 'pc06w', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc06w"), value: 'pc06w' %>
 
-    <%= f.radio_button :power_consumption, 'pc15w' %>
+    <%= f.radio_button :power_consumption, 'pc15w', class: 'is-checkradio is-info' %>
     <%= f.label :power_consumption, t("product.column.power_consumption.pc15w"), value: 'pc15w' %>
 
-    <%= f.radio_button :power_consumption, 'other_power_consumption' %>
+    <%= f.radio_button :power_consumption, 'other_power_consumption', class: 'is-checkradio is-danger' %>
     <%= f.label :power_consumption, t("product.column.other.title"), value: 'other_power_consumption' %>
-    <%= f.text_field :power_consumption_text %>
+    <%= f.text_field :power_consumption_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Stand by power consumption 單選 %>
-  <div>
-    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.title") + ':' %>
+  <div class="field">
+    <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :stand_by_power_consumption, 'sbpc01w' %>
+    <%= f.radio_button :stand_by_power_consumption, 'sbpc01w', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc01w"), value: 'sbpc01w' %>
 
-    <%= f.radio_button :stand_by_power_consumption, 'sbpc025w' %>
+    <%= f.radio_button :stand_by_power_consumption, 'sbpc025w', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc025w"), value: 'sbpc025w' %>
 
-    <%= f.radio_button :stand_by_power_consumption, 'sbpc05w' %>
+    <%= f.radio_button :stand_by_power_consumption, 'sbpc05w', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc05w"), value: 'sbpc05w' %>
 
-    <%= f.radio_button :stand_by_power_consumption, 'sbpc1w' %>
+    <%= f.radio_button :stand_by_power_consumption, 'sbpc1w', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc1w"), value: 'sbpc1w' %>
 
-    <%= f.radio_button :stand_by_power_consumption, 'sbpc02ma' %>
+    <%= f.radio_button :stand_by_power_consumption, 'sbpc02ma', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_power_consumption, t("product.column.stand_by_power_consumption.sbpc02ma"), value: 'sbpc02ma' %>
 
-    <%= f.radio_button :stand_by_power_consumption, 'other_stand_by_power_consumption' %>
+    <%= f.radio_button :stand_by_power_consumption, 'other_stand_by_power_consumption', class: 'is-checkradio is-danger' %>
     <%= f.label :stand_by_power_consumption, t("product.column.other.title"), value: 'other_stand_by_power_consumption' %>
-    <%= f.text_field :stand_by_power_consumption_text %>
+    <%= f.text_field :stand_by_power_consumption_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Detection angle 單選 %>
-  <div>
-    <%= f.label :detection_angle, t("product.column.detection_angle.title") + ':' %>
+  <div class="field">
+    <%= f.label :detection_angle, t("product.column.detection_angle.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :detection_angle, 'da110' %>
+    <%= f.radio_button :detection_angle, 'da110', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da110"), value: 'da110' %>
 
-    <%= f.radio_button :detection_angle, 'da120' %>
+    <%= f.radio_button :detection_angle, 'da120', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da120"), value: 'da120' %>
 
-    <%= f.radio_button :detection_angle, 'da150' %>
+    <%= f.radio_button :detection_angle, 'da150', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da150"), value: 'da150' %>
 
-    <%= f.radio_button :detection_angle, 'da170' %>
+    <%= f.radio_button :detection_angle, 'da170', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da170"), value: 'da170' %>
 
-    <%= f.radio_button :detection_angle, 'da180' %>
+    <%= f.radio_button :detection_angle, 'da180', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da180"), value: 'da180' %>
 
-    <%= f.radio_button :detection_angle, 'da230' %>
+    <%= f.radio_button :detection_angle, 'da230', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da230"), value: 'da230' %>
 
-    <%= f.radio_button :detection_angle, 'da240' %>
+    <%= f.radio_button :detection_angle, 'da240', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da240"), value: 'da240' %>
 
-    <%= f.radio_button :detection_angle, 'da360' %>
+    <%= f.radio_button :detection_angle, 'da360', class: 'is-checkradio is-info' %>
     <%= f.label :detection_angle, t("product.column.detection_angle.da360"), value: 'da360' %>
 
-    <%= f.radio_button :detection_angle, 'other_detection_angle' %>
+    <%= f.radio_button :detection_angle, 'other_detection_angle', class: 'is-checkradio is-danger' %>
     <%= f.label :detection_angle, t("product.column.other.title"), value: 'other_detection_angle' %>
-    <%= f.text_field :detection_angle_text %>
+    <%= f.text_field :detection_angle_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Detection range (towards) 單選 %>
-  <div>
-    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.title") + ':' %>
+  <div class="field">
+    <%= f.label :detection_range_towards, t("product.column.detection_range_towards.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt3m' %>
+    <%= f.radio_button :detection_range_towards, 'drt3m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt3m"), value: 'drt3m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt5m' %>
+    <%= f.radio_button :detection_range_towards, 'drt5m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt5m"), value: 'drt5m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt6m' %>
+    <%= f.radio_button :detection_range_towards, 'drt6m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt6m"), value: 'drt6m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt7m' %>
+    <%= f.radio_button :detection_range_towards, 'drt7m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt7m"), value: 'drt7m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt8m' %>
+    <%= f.radio_button :detection_range_towards, 'drt8m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt8m"), value: 'drt8m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt9m' %>
+    <%= f.radio_button :detection_range_towards, 'drt9m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt9m"), value: 'drt9m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt10m' %>
+    <%= f.radio_button :detection_range_towards, 'drt10m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt10m"), value: 'drt10m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt12m' %>
+    <%= f.radio_button :detection_range_towards, 'drt12m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt12m"), value: 'drt12m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt15m' %>
+    <%= f.radio_button :detection_range_towards, 'drt15m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt15m"), value: 'drt15m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt28m' %>
+    <%= f.radio_button :detection_range_towards, 'drt28m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt28m"), value: 'drt28m' %>
 
-    <%= f.radio_button :detection_range_towards, 'drt30m' %>
+    <%= f.radio_button :detection_range_towards, 'drt30m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_towards, t("product.column.detection_range_towards.drt30m"), value: 'drt30m' %>
 
-    <%= f.radio_button :detection_range_towards, 'other_detection_range_towards' %>
+    <%= f.radio_button :detection_range_towards, 'other_detection_range_towards', class: 'is-checkradio is-danger' %>
     <%= f.label :detection_range_towards, t("product.column.other.title"), value: 'other_detection_range_towards' %>
-    <%= f.text_field :detection_range_towards_text %>
+    <%= f.text_field :detection_range_towards_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Detection range (across) 單選 %>
-  <div>
-    <%= f.label :detection_range_across, t("product.column.detection_range_across.title") + ':' %>
+  <div class="field">
+    <%= f.label :detection_range_across, t("product.column.detection_range_across.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :detection_range_across, 'dra3m' %>
+    <%= f.radio_button :detection_range_across, 'dra3m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra3m"), value: 'dra3m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra5m' %>
+    <%= f.radio_button :detection_range_across, 'dra5m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra5m"), value: 'dra5m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra6m' %>
+    <%= f.radio_button :detection_range_across, 'dra6m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra6m"), value: 'dra6m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra7m' %>
+    <%= f.radio_button :detection_range_across, 'dra7m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra7m"), value: 'dra7m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra8m' %>
+    <%= f.radio_button :detection_range_across, 'dra8m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra8m"), value: 'dra8m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra9m' %>
+    <%= f.radio_button :detection_range_across, 'dra9m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra9m"), value: 'dra9m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra10m' %>
+    <%= f.radio_button :detection_range_across, 'dra10m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra10m"), value: 'dra10m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra12m' %>
+    <%= f.radio_button :detection_range_across, 'dra12m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra12m"), value: 'dra12m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra15m' %>
+    <%= f.radio_button :detection_range_across, 'dra15m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra15m"), value: 'dra15m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra16m' %>
+    <%= f.radio_button :detection_range_across, 'dra16m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra16m"), value: 'dra16m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra28m' %>
+    <%= f.radio_button :detection_range_across, 'dra28m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra28m"), value: 'dra28m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra30m' %>
+    <%= f.radio_button :detection_range_across, 'dra30m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra30m"), value: 'dra30m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra32m' %>
+    <%= f.radio_button :detection_range_across, 'dra32m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra32m"), value: 'dra32m' %>
 
-    <%= f.radio_button :detection_range_across, 'dra40m' %>
+    <%= f.radio_button :detection_range_across, 'dra40m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_across, t("product.column.detection_range_across.dra40m"), value: 'dra40m' %>
 
-    <%= f.radio_button :detection_range_across, 'other_detection_range_across' %>
+    <%= f.radio_button :detection_range_across, 'other_detection_range_across', class: 'is-checkradio is-danger' %>
     <%= f.label :detection_range_across, t("product.column.other.title"), value: 'other_detection_range_across' %>
-    <%= f.text_field :detection_range_across_text %>
+    <%= f.text_field :detection_range_across_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Detection range (seated) 單選 %>
-  <div>
-    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.title") + ':' %>
+  <div class="field">
+    <%= f.label :detection_range_seated, t("product.column.detection_range_seated.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs3m' %>
+    <%= f.radio_button :detection_range_seated, 'drs3m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs3m"), value: 'drs3m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs5m' %>
+    <%= f.radio_button :detection_range_seated, 'drs5m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs5m"), value: 'drs5m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs6m' %>
+    <%= f.radio_button :detection_range_seated, 'drs6m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs6m"), value: 'drs6m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs7m' %>
+    <%= f.radio_button :detection_range_seated, 'drs7m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs7m"), value: 'drs7m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs8m' %>
+    <%= f.radio_button :detection_range_seated, 'drs8m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs8m"), value: 'drs8m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs9m' %>
+    <%= f.radio_button :detection_range_seated, 'drs9m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs9m"), value: 'drs9m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs10m' %>
+    <%= f.radio_button :detection_range_seated, 'drs10m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs10m"), value: 'drs10m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs12m' %>
+    <%= f.radio_button :detection_range_seated, 'drs12m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs12m"), value: 'drs12m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs15m' %>
+    <%= f.radio_button :detection_range_seated, 'drs15m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs15m"), value: 'drs15m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs28m' %>
+    <%= f.radio_button :detection_range_seated, 'drs28m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs28m"), value: 'drs28m' %>
 
-    <%= f.radio_button :detection_range_seated, 'drs30m' %>
+    <%= f.radio_button :detection_range_seated, 'drs30m', class: 'is-checkradio is-info' %>
     <%= f.label :detection_range_seated, t("product.column.detection_range_seated.drs30m"), value: 'drs30m' %>
 
-    <%= f.radio_button :detection_range_seated, 'other_detection_range_seated' %>
+    <%= f.radio_button :detection_range_seated, 'other_detection_range_seated', class: 'is-checkradio is-danger' %>
     <%= f.label :detection_range_seated, t("product.column.other.title"), value: 'other_detection_range_seated' %>
-    <%= f.text_field :detection_range_seated_text %>
+    <%= f.text_field :detection_range_seated_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Recommended mounting height 單選 %>
-  <div>
-    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.title") + ':' %>
+  <div class="field">
+    <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'rmh1d1m' %>
+    <%= f.radio_button :recommended_mounting_height, 'rmh1d1m', class: 'is-checkradio is-info' %>
     <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh1d1m"), value: 'rmh1d1m' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'rmh2m' %>
+    <%= f.radio_button :recommended_mounting_height, 'rmh2m', class: 'is-checkradio is-info' %>
     <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh2m"), value: 'rmh2m' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'rmh2d5m' %>
+    <%= f.radio_button :recommended_mounting_height, 'rmh2d5m', class: 'is-checkradio is-info' %>
     <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh2d5m"), value: 'rmh2d5m' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'rmh2d8m' %>
+    <%= f.radio_button :recommended_mounting_height, 'rmh2d8m', class: 'is-checkradio is-info' %>
     <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh2d8m"), value: 'rmh2d8m' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'rmh3m' %>
+    <%= f.radio_button :recommended_mounting_height, 'rmh3m', class: 'is-checkradio is-info' %>
     <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh3m"), value: 'rmh3m' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'rmh_not_mention' %>
+    <%= f.radio_button :recommended_mounting_height, 'rmh_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :recommended_mounting_height, t("product.column.recommended_mounting_height.rmh_not_mention"), value: 'rmh_not_mention' %>
 
-    <%= f.radio_button :recommended_mounting_height, 'other_recommended_mounting_height' %>
+    <%= f.radio_button :recommended_mounting_height, 'other_recommended_mounting_height', class: 'is-checkradio is-danger' %>
     <%= f.label :recommended_mounting_height, t("product.column.other.title"), value: 'other_recommended_mounting_height' %>
-    <%= f.text_field :recommended_mounting_height_text %>
+    <%= f.text_field :recommended_mounting_height_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Max mounting height 單選 %>
-  <div>
-    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.title") + ':' %>
+  <div class="field">
+    <%= f.label :max_mounting_height, t("product.column.max_mounting_height.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :max_mounting_height, 'max_mh2d2m' %>
+    <%= f.radio_button :max_mounting_height, 'max_mh2d2m', class: 'is-checkradio is-info' %>
     <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh2d2m"), value: 'max_mh2d2m' %>
 
-    <%= f.radio_button :max_mounting_height, 'max_mh3m' %>
+    <%= f.radio_button :max_mounting_height, 'max_mh3m', class: 'is-checkradio is-info' %>
     <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh3m"), value: 'max_mh3m' %>
 
-    <%= f.radio_button :max_mounting_height, 'max_mh5m' %>
+    <%= f.radio_button :max_mounting_height, 'max_mh5m', class: 'is-checkradio is-info' %>
     <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh5m"), value: 'max_mh5m' %>
 
-    <%= f.radio_button :max_mounting_height, 'max_mh14m' %>
+    <%= f.radio_button :max_mounting_height, 'max_mh14m', class: 'is-checkradio is-info' %>
     <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh14m"), value: 'max_mh14m' %>
 
-    <%= f.radio_button :max_mounting_height, 'max_mh15m' %>
+    <%= f.radio_button :max_mounting_height, 'max_mh15m', class: 'is-checkradio is-info' %>
     <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh15m"), value: 'max_mh15m' %>
 
-    <%= f.radio_button :max_mounting_height, 'max_mh_not_mention' %>
+    <%= f.radio_button :max_mounting_height, 'max_mh_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :max_mounting_height, t("product.column.max_mounting_height.max_mh_not_mention"), value: 'max_mh_not_mention' %>
 
-    <%= f.radio_button :max_mounting_height, 'other_max_mounting_height' %>
+    <%= f.radio_button :max_mounting_height, 'other_max_mounting_height', class: 'is-checkradio is-danger' %>
     <%= f.label :max_mounting_height, t("product.column.other.title"), value: 'other_max_mounting_height' %>
-    <%= f.text_field :max_mounting_height_text %>
+    <%= f.text_field :max_mounting_height_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Min mounting height 單選 %>
-  <div>
-    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.title") + ':' %>
+  <div class="field">
+    <%= f.label :min_mounting_height, t("product.column.min_mounting_height.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :min_mounting_height, 'min_mh1d1m' %>
+    <%= f.radio_button :min_mounting_height, 'min_mh1d1m', class: 'is-checkradio is-info' %>
     <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh1d1m"), value: 'min_mh1d1m' %>
 
-    <%= f.radio_button :min_mounting_height, 'min_mh1d8m' %>
+    <%= f.radio_button :min_mounting_height, 'min_mh1d8m', class: 'is-checkradio is-info' %>
     <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh1d8m"), value: 'min_mh1d8m' %>
 
-    <%= f.radio_button :min_mounting_height, 'min_mh2m' %>
+    <%= f.radio_button :min_mounting_height, 'min_mh2m', class: 'is-checkradio is-info' %>
     <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh2m"), value: 'min_mh2m' %>
 
-    <%= f.radio_button :min_mounting_height, 'min_mh2d5m' %>
+    <%= f.radio_button :min_mounting_height, 'min_mh2d5m', class: 'is-checkradio is-info' %>
     <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh2d5m"), value: 'min_mh2d5m' %>
 
-    <%= f.radio_button :min_mounting_height, 'min_mh4m' %>
+    <%= f.radio_button :min_mounting_height, 'min_mh4m', class: 'is-checkradio is-info' %>
     <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh4m"), value: 'min_mh4m' %>
 
-    <%= f.radio_button :min_mounting_height, 'min_mh_not_mention' %>
+    <%= f.radio_button :min_mounting_height, 'min_mh_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :min_mounting_height, t("product.column.min_mounting_height.min_mh_not_mention"), value: 'min_mh_not_mention' %>
 
-    <%= f.radio_button :min_mounting_height, 'other_min_mounting_height' %>
+    <%= f.radio_button :min_mounting_height, 'other_min_mounting_height', class: 'is-checkradio is-danger' %>
     <%= f.label :min_mounting_height, t("product.column.other.title"), value: 'other_min_mounting_height' %>
-    <%= f.text_field :min_mounting_height_text %>
+    <%= f.text_field :min_mounting_height_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# IP 單選%>
-  <div>
-    <%= f.label :ip, t("product.column.ip.title") + ':' %>
+  <div class="field">
+    <%= f.label :ip, t("product.column.ip.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :ip, 'ip20' %>
+    <%= f.radio_button :ip, 'ip20', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip20"), value: 'ip20' %>
 
-    <%= f.radio_button :ip, 'ip40' %>
+    <%= f.radio_button :ip, 'ip40', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip40"), value: 'ip40' %>
 
-    <%= f.radio_button :ip, 'ip44' %>
+    <%= f.radio_button :ip, 'ip44', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip44"), value: 'ip44' %>
 
-    <%= f.radio_button :ip, 'ip45' %>
+    <%= f.radio_button :ip, 'ip45', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip45"), value: 'ip45' %>
 
-    <%= f.radio_button :ip, 'ip50' %>
+    <%= f.radio_button :ip, 'ip50', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip50"), value: 'ip50' %>
 
-    <%= f.radio_button :ip, 'ip54' %>
+    <%= f.radio_button :ip, 'ip54', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip54"), value: 'ip54' %>
 
-    <%= f.radio_button :ip, 'ip55' %>
+    <%= f.radio_button :ip, 'ip55', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip55"), value: 'ip55' %>
 
-    <%= f.radio_button :ip, 'ip60' %>
+    <%= f.radio_button :ip, 'ip60', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip60"), value: 'ip60' %>
 
-    <%= f.radio_button :ip, 'ip65' %>
+    <%= f.radio_button :ip, 'ip65', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip65"), value: 'ip65' %>
 
-    <%= f.radio_button :ip, 'ip66' %>
+    <%= f.radio_button :ip, 'ip66', class: 'is-checkradio is-info' %>
     <%= f.label :ip, t("product.column.ip.ip66"), value: 'ip66' %>
 
-    <%= f.radio_button :ip, 'other_ip' %>
+    <%= f.radio_button :ip, 'other_ip', class: 'is-checkradio is-danger' %>
     <%= f.label :ip, t("product.column.other.title"), value: 'other_ip' %>
-    <%= f.text_field :ip_text %>
+    <%= f.text_field :ip_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Class 單選%>
-  <div>
-    <%= f.label :ip_class, t("product.column.ip_class.title") + ':' %>
+  <div class="field">
+    <%= f.label :ip_class, t("product.column.ip_class.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :ip_class, 'i' %>
+    <%= f.radio_button :ip_class, 'i', class: 'is-checkradio is-info' %>
     <%= f.label :ip_class, t("product.column.ip_class.i"), value: 'i' %>
 
-    <%= f.radio_button :ip_class, 'ii' %>
+    <%= f.radio_button :ip_class, 'ii', class: 'is-checkradio is-info' %>
     <%= f.label :ip_class, t("product.column.ip_class.ii"), value: 'ii' %>
 
-    <%= f.radio_button :ip_class, 'iii' %>
+    <%= f.radio_button :ip_class, 'iii', class: 'is-checkradio is-info' %>
     <%= f.label :ip_class, t("product.column.ip_class.iii"), value: 'iii' %>
 
 
-    <%= f.radio_button :ip_class, 'other_ip_class' %>
+    <%= f.radio_button :ip_class, 'other_ip_class', class: 'is-checkradio is-danger' %>
     <%= f.label :ip_class, t("product.column.other.title"), value: 'other_ip_class' %>
-    <%= f.text_field :ip_class_text %>
+    <%= f.text_field :ip_class_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Lowest ambient temperature 單選%>
-  <div>
-    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.title") + ':' %>
+  <div class="field">
+    <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :lowest_ambient_temperature, 'latn25' %>
+    <%= f.radio_button :lowest_ambient_temperature, 'latn25', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.latn25"), value: 'latn25' %>
 
-    <%= f.radio_button :lowest_ambient_temperature, 'latn20' %>
+    <%= f.radio_button :lowest_ambient_temperature, 'latn20', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.latn20"), value: 'latn20' %>
 
-    <%= f.radio_button :lowest_ambient_temperature, 'latn10' %>
+    <%= f.radio_button :lowest_ambient_temperature, 'latn10', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.latn10"), value: 'latn10' %>
 
-    <%= f.radio_button :lowest_ambient_temperature, 'lat0' %>
+    <%= f.radio_button :lowest_ambient_temperature, 'lat0', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_ambient_temperature, t("product.column.lowest_ambient_temperature.lat0"), value: 'lat0' %>
 
-    <%= f.radio_button :lowest_ambient_temperature, 'other_lowest_ambient_temperature' %>
+    <%= f.radio_button :lowest_ambient_temperature, 'other_lowest_ambient_temperature', class: 'is-checkradio is-danger' %>
     <%= f.label :lowest_ambient_temperature, t("product.column.other.title"), value: 'other_lowest_ambient_temperature' %>
-    <%= f.text_field :lowest_ambient_temperature_text %>
+    <%= f.text_field :lowest_ambient_temperature_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Higest ambient temperature 單選%>
-  <div>
-    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.title") + ':' %>
+  <div class="field">
+    <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :highest_ambient_temperature, 'hat40' %>
+    <%= f.radio_button :highest_ambient_temperature, 'hat40', class: 'is-checkradio is-info' %>
     <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat40"), value: 'hat40' %>
 
-    <%= f.radio_button :highest_ambient_temperature, 'hat45' %>
+    <%= f.radio_button :highest_ambient_temperature, 'hat45', class: 'is-checkradio is-info' %>
     <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat45"), value: 'hat45' %>
 
-    <%= f.radio_button :highest_ambient_temperature, 'hat50' %>
+    <%= f.radio_button :highest_ambient_temperature, 'hat50', class: 'is-checkradio is-info' %>
     <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat50"), value: 'hat50' %>
 
-    <%= f.radio_button :highest_ambient_temperature, 'hat55' %>
+    <%= f.radio_button :highest_ambient_temperature, 'hat55', class: 'is-checkradio is-info' %>
     <%= f.label :highest_ambient_temperature, t("product.column.highest_ambient_temperature.hat55"), value: 'hat55' %>
 
-    <%= f.radio_button :highest_ambient_temperature, 'other_highest_ambient_temperature' %>
+    <%= f.radio_button :highest_ambient_temperature, 'other_highest_ambient_temperature', class: 'is-checkradio is-danger' %>
     <%= f.label :highest_ambient_temperature, t("product.column.other.title"), value: 'other_highest_ambient_temperature' %>
-    <%= f.text_field :highest_ambient_temperature_text %>
+    <%= f.text_field :highest_ambient_temperature_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Min delay time 單選%>
-  <div>
-    <%= f.label :min_delay_time, t("product.column.min_delay_time.title") + ':' %>
+  <div class="field">
+    <%= f.label :min_delay_time, t("product.column.min_delay_time.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :min_delay_time, 'min_dt10s' %>
+    <%= f.radio_button :min_delay_time, 'min_dt10s', class: 'is-checkradio is-info' %>
     <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt10s"), value: 'min_dt10s' %>
 
-    <%= f.radio_button :min_delay_time, 'min_dt15s' %>
+    <%= f.radio_button :min_delay_time, 'min_dt15s', class: 'is-checkradio is-info' %>
     <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt15s"), value: 'min_dt15s' %>
 
-    <%= f.radio_button :min_delay_time, 'min_dt1m' %>
+    <%= f.radio_button :min_delay_time, 'min_dt1m', class: 'is-checkradio is-info' %>
     <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt1m"), value: 'min_dt1m' %>
 
-    <%= f.radio_button :min_delay_time, 'min_dt5m' %>
+    <%= f.radio_button :min_delay_time, 'min_dt5m', class: 'is-checkradio is-info' %>
     <%= f.label :min_delay_time, t("product.column.min_delay_time.min_dt5m"), value: 'min_dt5m' %>
 
-    <%= f.radio_button :min_delay_time, 'other_min_delay_time' %>
+    <%= f.radio_button :min_delay_time, 'other_min_delay_time', class: 'is-checkradio is-danger' %>
     <%= f.label :min_delay_time, t("product.column.other.title"), value: 'other_min_delay_time' %>
-    <%= f.text_field :min_delay_time_text %>
+    <%= f.text_field :min_delay_time_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Max delay time 單選%>
-  <div>
-    <%= f.label :max_delay_time, t("product.column.max_delay_time.title") + ':' %>
+  <div class="field">
+    <%= f.label :max_delay_time, t("product.column.max_delay_time.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :max_delay_time, 'max_dt30m' %>
+    <%= f.radio_button :max_delay_time, 'max_dt30m', class: 'is-checkradio is-info' %>
     <%= f.label :max_delay_time, t("product.column.max_delay_time.max_dt30m"), value: 'max_dt30m' %>
 
-    <%= f.radio_button :max_delay_time, 'max_dt60m' %>
+    <%= f.radio_button :max_delay_time, 'max_dt60m', class: 'is-checkradio is-info' %>
     <%= f.label :max_delay_time, t("product.column.max_delay_time.max_dt60m"), value: 'max_dt60m' %>
 
-    <%= f.radio_button :max_delay_time, 'max_dt120m' %>
+    <%= f.radio_button :max_delay_time, 'max_dt120m', class: 'is-checkradio is-info' %>
     <%= f.label :max_delay_time, t("product.column.max_delay_time.max_dt120m"), value: 'max_dt120m' %>
 
-    <%= f.radio_button :max_delay_time, 'other_max_delay_time' %>
+    <%= f.radio_button :max_delay_time, 'other_max_delay_time', class: 'is-checkradio is-danger' %>
     <%= f.label :max_delay_time, t("product.column.other.title"), value: 'other_max_delay_time' %>
-    <%= f.text_field :max_delay_time_text %>
+    <%= f.text_field :max_delay_time_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Lowest lux 單選%>
-  <div>
-    <%= f.label :lowest_lux, t("product.column.lowest_lux.title") + ':' %>
+  <div class="field">
+    <%= f.label :lowest_lux, t("product.column.lowest_lux.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :lowest_lux, 'lux0' %>
+    <%= f.radio_button :lowest_lux, 'lux0', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_lux, t("product.column.lowest_lux.lux0"), value: 'lux0' %>
 
-    <%= f.radio_button :lowest_lux, 'lux2' %>
+    <%= f.radio_button :lowest_lux, 'lux2', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_lux, t("product.column.lowest_lux.lux2"), value: 'lux2' %>
 
-    <%= f.radio_button :lowest_lux, 'lux5' %>
+    <%= f.radio_button :lowest_lux, 'lux5', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_lux, t("product.column.lowest_lux.lux5"), value: 'lux5' %>
 
-    <%= f.radio_button :lowest_lux, 'lux10' %>
+    <%= f.radio_button :lowest_lux, 'lux10', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_lux, t("product.column.lowest_lux.lux10"), value: 'lux10' %>
 
-    <%= f.radio_button :lowest_lux, 'lux20' %>
+    <%= f.radio_button :lowest_lux, 'lux20', class: 'is-checkradio is-info' %>
     <%= f.label :lowest_lux, t("product.column.lowest_lux.lux20"), value: 'lux20' %>
 
-    <%= f.radio_button :lowest_lux, 'other_lowest_lux_text' %>
+    <%= f.radio_button :lowest_lux, 'other_lowest_lux_text', class: 'is-checkradio is-danger' %>
     <%= f.label :lowest_lux, t("product.column.other.title"), value: 'other_lowest_lux_text' %>
-    <%= f.text_field :lowest_lux_text %>
+    <%= f.text_field :lowest_lux_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Highest lux 單選%>
-  <div>
-    <%= f.label :highest_lux, t("product.column.highest_lux.title") + ':' %>
+  <div class="field">
+    <%= f.label :highest_lux, t("product.column.highest_lux.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :highest_lux, 'lux500' %>
+    <%= f.radio_button :highest_lux, 'lux500', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux500"), value: 'lux500' %>
 
-    <%= f.radio_button :highest_lux, 'lux1000' %>
+    <%= f.radio_button :highest_lux, 'lux1000', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux1000"), value: 'lux1000' %>
 
-    <%= f.radio_button :highest_lux, 'lux1500' %>
+    <%= f.radio_button :highest_lux, 'lux1500', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux1500"), value: 'lux1500' %>
 
-    <%= f.radio_button :highest_lux, 'lux2000' %>
+    <%= f.radio_button :highest_lux, 'lux2000', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux2000"), value: 'lux2000' %>
 
-    <%= f.radio_button :highest_lux, 'lux2500' %>
+    <%= f.radio_button :highest_lux, 'lux2500', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux2500"), value: 'lux2500' %>
 
-    <%= f.radio_button :highest_lux, 'lux3000' %>
+    <%= f.radio_button :highest_lux, 'lux3000', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux3000"), value: 'lux3000' %>
 
-    <%= f.radio_button :highest_lux, 'lux_infinity' %>
+    <%= f.radio_button :highest_lux, 'lux_infinity', class: 'is-checkradio is-info' %>
     <%= f.label :highest_lux, t("product.column.highest_lux.lux_infinity"), value: 'lux_infinity' %>
 
-    <%= f.radio_button :highest_lux, 'other_highest_lux' %>
+    <%= f.radio_button :highest_lux, 'other_highest_lux', class: 'is-checkradio is-danger' %>
     <%= f.label :highest_lux, t("product.column.other.title"), value: 'other_highest_lux' %>
-    <%= f.text_field :highest_lux_text %>
+    <%= f.text_field :highest_lux_text, class: 'input is-inline is-small' %>
   </div>
 
-  <%# Lux learning 單選 boolean%>
-  <div>
-    <%= f.label :lux_learning, t("prodcut.lux_learning.title") + ':' %>
-    <%= f.check_box :lux_learning %>
-    <%= f.label :lux_learning, t("product.column.lux_learning.ll_yes") %>
+  <%# Lux learning 單選 boolean checlbox%>
+  <div class="field">
+    <%= f.label :lux_learning, t("product.column.lux_learning.title") + ':', class: 'label' %>
+    <%= f.check_box :lux_learning, class: 'is-checkradio is-block is-info' %>
+    <%= f.label :lux_learning, t("product.column.lux_learning.is_true") %>
   </div>
 
   <%# Mounting type 複選 %>
-  <div>
-    <%= f.label :mounting_type, t("product.column.mounting_type.title") + ':'%>
+  <div class="field">
+    <%= f.label :mounting_type, t("product.column.mounting_type.title") + ':', class: 'label' %>
 
-    <%= f.check_box :surface %>
+    <%= f.check_box :surface, class: 'is-checkradio is-block is-info' %>
     <%= f.label :surface, t("product.column.mounting_type.surface") %>
 
-    <%= f.check_box :flush %>
+    <%= f.check_box :flush, class: 'is-checkradio is-block is-info' %>
     <%= f.label :flush, t("product.column.mounting_type.flush") %>
 
-    <%= f.check_box :wall %>
+    <%= f.check_box :wall, class: 'is-checkradio is-block is-info' %>
     <%= f.label :wall, t("product.column.mounting_type.wall") %>
 
-    <%= f.check_box :ceiling %>
+    <%= f.check_box :ceiling, class: 'is-checkradio is-block is-info' %>
     <%= f.label :ceiling, t("product.column.mounting_type.ceiling") %>
 
-    <%= f.check_box :other_mounting_type %>
+    <%= f.check_box :other_mounting_type, class: 'is-checkradio is-block is-danger' %>
     <%= f.label :other_mounting_type, t("product.column.other.title") %>
-    <%= f.text_field :mounting_type_text %>
+    <%= f.text_field :mounting_type_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Application 複選 %>
-  <div>
-    <%= f.label :application, t("product.column.application.title") + ':'%>
+  <div class="field">
+    <%= f.label :application, t("product.column.application.title") + ':', class: 'label' %>
 
-    <%= f.check_box :office %>
+    <%= f.check_box :office, class: 'is-checkradio is-block is-info' %>
     <%= f.label :office, t("product.column.application.office") %>
 
-    <%= f.check_box :hospital %>
+    <%= f.check_box :hospital, class: 'is-checkradio is-block is-info' %>
     <%= f.label :hospital, t("product.column.application.hospital") %>
 
-    <%= f.check_box :corridor %>
+    <%= f.check_box :corridor, class: 'is-checkradio is-block is-info' %>
     <%= f.label :corridor, t("product.column.application.corridor") %>
 
-    <%= f.check_box :hallway %>
+    <%= f.check_box :hallway, class: 'is-checkradio is-block is-info' %>
     <%= f.label :hallway, t("product.column.application.hallway") %>
 
-    <%= f.check_box :aisle %>
+    <%= f.check_box :aisle, class: 'is-checkradio is-block is-info' %>
     <%= f.label :aisle, t("product.column.application.aisle") %>
 
-    <%= f.check_box :car_park %>
+    <%= f.check_box :car_park, class: 'is-checkradio is-block is-info' %>
     <%= f.label :car_park, t("product.column.application.car_park") %>
 
-    <%= f.check_box :storage %>
+    <%= f.check_box :storage, class: 'is-checkradio is-block is-info' %>
     <%= f.label :storage, t("product.column.application.storage") %>
 
-    <%= f.check_box :underground_garages %>
+    <%= f.check_box :underground_garages, class: 'is-checkradio is-block is-info' %>
     <%= f.label :underground_garages, t("product.column.application.underground_garages") %>
 
-    <%= f.check_box :outdoor %>
+    <%= f.check_box :outdoor, class: 'is-checkradio is-block is-info' %>
     <%= f.label :outdoor, t("product.column.application.outdoor") %>
 
-    <%= f.check_box :schools %>
+    <%= f.check_box :schools, class: 'is-checkradio is-block is-info' %>
     <%= f.label :schools, t("product.column.application.schools") %>
 
-    <%= f.check_box :conference_rooms %>
+    <%= f.check_box :conference_rooms, class: 'is-checkradio is-block is-info' %>
     <%= f.label :conference_rooms, t("product.column.application.conference_rooms") %>
 
-    <%= f.check_box :warehouses %>
+    <%= f.check_box :gyms, class: 'is-checkradio is-block is-info' %>
+    <%= f.label :gyms, t("product.column.application.gyms") %>
+
+    <%= f.check_box :warehouses, class: 'is-checkradio is-block is-info' %>
     <%= f.label :warehouses, t("product.column.application.warehouses") %>
 
-    <%= f.check_box :staircases %>
+    <%= f.check_box :staircases, class: 'is-checkradio is-block is-info' %>
     <%= f.label :staircases, t("product.column.application.staircases") %>
 
-    <%= f.check_box :industrial_halls %>
+    <%= f.check_box :industrial_halls, class: 'is-checkradio is-block is-info' %>
     <%= f.label :industrial_halls, t("product.column.application.industrial_halls") %>
 
-    <%= f.check_box :emergency_power_supply_networks %>
+    <%= f.check_box :emergency_power_supply_networks, class: 'is-checkradio is-block is-info' %>
     <%= f.label :emergency_power_supply_networks, t("product.column.application.emergency_power_supply_networks") %>
 
-    <%= f.check_box :toilets %>
+    <%= f.check_box :toilets, class: 'is-checkradio is-block is-info' %>
     <%= f.label :toilets, t("product.column.application.toilets") %>
 
-    <%= f.check_box :other_application %>
+    <%= f.check_box :other_application, class: 'is-checkradio is-block is-danger' %>
     <%= f.label :other_application, t("product.column.other.title") %>
-    <%= f.text_field :application_text %>
+    <%= f.text_field :application_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Slave 單選%>
-  <div>
-    <%= f.label :slave, t("product.column.slave.title") + ':' %>
+  <div class="field">
+    <%= f.label :slave, t("product.column.slave.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :slave, 's_yes' %>
+    <%= f.radio_button :slave, 's_yes', class: 'is-checkradio is-info' %>
     <%= f.label :slave, t("product.column.slave.s_yes"), value: 's_yes' %>
 
-    <%= f.radio_button :slave, 's_no' %>
+    <%= f.radio_button :slave, 's_no', class: 'is-checkradio is-info' %>
     <%= f.label :slave, t("product.column.slave.s_no"), value: 's_no' %>
 
-    <%= f.radio_button :slave, 's_not_mention' %>
+    <%= f.radio_button :slave, 's_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :slave, t("product.column.slave.s_not_mention"), value: 's_not_mention' %>
   </div>
 
   <%# Mixed light measurement 單選%>
-  <div>
-    <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.title") + ':' %>
+  <div class="field">
+    <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :mixed_light_measurement, 'mlm_yes' %>
+    <%= f.radio_button :mixed_light_measurement, 'mlm_yes', class: 'is-checkradio is-info' %>
     <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.mlm_yes"), value: 'mlm_yes' %>
 
-    <%= f.radio_button :mixed_light_measurement, 'mlm_no' %>
+    <%= f.radio_button :mixed_light_measurement, 'mlm_no', class: 'is-checkradio is-info' %>
     <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.mlm_no"), value: 'mlm_no' %>
 
-    <%= f.radio_button :mixed_light_measurement, 'mlm_not_mention' %>
+    <%= f.radio_button :mixed_light_measurement, 'mlm_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :mixed_light_measurement, t("product.column.mixed_light_measurement.mlm_not_mention"), value: 'mlm_not_mention' %>
   </div>
 
   <%# Dimmable(Constant light) 單選%>
-  <div>
-    <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.title") + ':' %>
+  <div class="field">
+    <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :dimmable_constant_light, 'dcl_yes' %>
+    <%= f.radio_button :dimmable_constant_light, 'dcl_yes', class: 'is-checkradio is-info' %>
     <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.dcl_yes"), value: 'dcl_yes' %>
 
-    <%= f.radio_button :dimmable_constant_light, 'dcl_no' %>
+    <%= f.radio_button :dimmable_constant_light, 'dcl_no', class: 'is-checkradio is-info' %>
     <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.dcl_no"), value: 'dcl_no' %>
 
-    <%= f.radio_button :dimmable_constant_light, 'dcl_not_mention' %>
+    <%= f.radio_button :dimmable_constant_light, 'dcl_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :dimmable_constant_light, t("product.column.dimmable_constant_light.dcl_not_mention"), value: 'dcl_not_mention' %>
   </div>
   
   <%# Stand-by light 單選%>
-  <div>
-    <%= f.label :stand_by_light, t("product.column.stand_by_light.title") + ':' %>
+  <div class="field">
+    <%= f.label :stand_by_light, t("product.column.stand_by_light.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :stand_by_light, 'sbl_no' %>
+    <%= f.radio_button :stand_by_light, 'sbl_no', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl_no"), value: 'sbl_no' %>
 
-    <%= f.radio_button :stand_by_light, 'sbl10p' %>
+    <%= f.radio_button :stand_by_light, 'sbl10p', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl10p"), value: 'sbl10p' %>
 
-    <%= f.radio_button :stand_by_light, 'sbl10_40p' %>
+    <%= f.radio_button :stand_by_light, 'sbl10_40p', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl10_40p"), value: 'sbl10_40p' %>
 
-    <%= f.radio_button :stand_by_light, 'sbl10_50p' %>
+    <%= f.radio_button :stand_by_light, 'sbl10_50p', class: 'is-checkradio is-info' %>
     <%= f.label :stand_by_light, t("product.column.stand_by_light.sbl10_50p"), value: 'sbl10_50p' %>
 
-    <%= f.radio_button :stand_by_light, 'other_stand_by_light' %>
+    <%= f.radio_button :stand_by_light, 'other_stand_by_light', class: 'is-checkradio is-danger' %>
     <%= f.label :stand_by_light, t("product.column.other.title"), value: 'other_stand_by_light' %>
-    <%= f.text_field :stand_by_light_text %>
+    <%= f.text_field :stand_by_light_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Push-button connectable 單選%>
-  <div>
-    <%= f.label :push_button_connectable, t("product.column.push_button_connectable.title") + ':' %>
+  <div class="field">
+    <%= f.label :push_button_connectable, t("product.column.push_button_connectable.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :push_button_connectable, 'pbc_yes' %>
+    <%= f.radio_button :push_button_connectable, 'pbc_yes', class: 'is-checkradio is-info' %>
     <%= f.label :push_button_connectable, t("product.column.push_button_connectable.pbc_yes"), value: 'pbc_yes' %>
 
-    <%= f.radio_button :push_button_connectable, 'pbc_no' %>
+    <%= f.radio_button :push_button_connectable, 'pbc_no', class: 'is-checkradio is-info' %>
     <%= f.label :push_button_connectable, t("product.column.push_button_connectable.pbc_no"), value: 'pbc_no' %>
 
-    <%= f.radio_button :push_button_connectable, 'pbc_not_mention' %>
+    <%= f.radio_button :push_button_connectable, 'pbc_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :push_button_connectable, t("product.column.push_button_connectable.pbc_not_mention"), value: 'pbc_not_mention' %>
   </div>
 
   <%# Orientation light 單選%>
-  <div>
-    <%= f.label :orientation_light, t("product.column.orientation_light.title") + ':' %>
+  <div class="field">
+    <%= f.label :orientation_light, t("product.column.orientation_light.title") + ':', class: 'label' %>
 
-    <%= f.radio_button :orientation_light, 'ol_yes' %>
+    <%= f.radio_button :orientation_light, 'ol_yes', class: 'is-checkradio is-info' %>
     <%= f.label :orientation_light, t("product.column.orientation_light.ol_yes"), value: 'ol_yes' %>
 
-    <%= f.radio_button :orientation_light, 'ol_no' %>
+    <%= f.radio_button :orientation_light, 'ol_no', class: 'is-checkradio is-info' %>
     <%= f.label :orientation_light, t("product.column.orientation_light.ol_no"), value: 'ol_no' %>
 
-    <%= f.radio_button :orientation_light, 'ol_not_mention' %>
+    <%= f.radio_button :orientation_light, 'ol_not_mention', class: 'is-checkradio is-info' %>
     <%= f.label :orientation_light, t("product.column.orientation_light.ol_not_mention"), value: 'ol_not_mention' %>
   </div>
 
   <%# Bluetooth 複選 %>
-  <div>
+  <div class="field">
     <%= f.label :bluetooth, t("product.column.bluetooth.title") + ':'%>
 
-    <%= f.check_box :not_availablel %>
+    <%= f.check_box :not_availablel, class: 'is-checkradio is-block is-info' %>
     <%= f.label :not_availablel, t("product.column.bluetooth.not_availablel") %>
 
-    <%= f.check_box :bluetooth_4dx %>
+    <%= f.check_box :bluetooth_4dx, class: 'is-checkradio is-block is-info' %>
     <%= f.label :bluetooth_4dx, t("product.column.bluetooth.bluetooth_4dx") %>
 
-    <%= f.check_box :bluetooth_5d0 %>
+    <%= f.check_box :bluetooth_5d0, class: 'is-checkradio is-block is-info' %>
     <%= f.label :bluetooth_5d0, t("product.column.bluetooth.bluetooth_5d0") %>
 
-    <%= f.check_box :bluetooth_mesh %>
+    <%= f.check_box :bluetooth_mesh, class: 'is-checkradio is-block is-info' %>
     <%= f.label :bluetooth_mesh, t("product.column.bluetooth.bluetooth_mesh") %>
 
-    <%= f.check_box :other_bluetooth %>
+    <%= f.check_box :other_bluetooth, class: 'is-checkradio is-block is-danger' %>
     <%= f.label :other_bluetooth, t("product.column.other.title") %>
-    <%= f.text_field :bluetooth_text %>
+    <%= f.text_field :bluetooth_text, class: 'input is-inline is-small' %>
   </div>
 
   <%# Description	段落 %>
-  <div>
-    <%= f.label :description, t("product.column.description.title") %>
-    <%= f.text_area :description %>
+  <div class="field">
+    <%= f.label :description, t("product.column.description.title"), class: 'label' %>
+    <%= f.text_area :description, class: 'textarea' %>
   </div>
 
-  <div>
-    <%= f.submit t("product.button.create") %>
-    <%= link_to t("product.button.cancel"), products_path %>
+  <div class="field">
+    <%= f.submit t("product.button.create"), class: 'button is-primary' %>
+    <%= link_to t("product.button.cancel"), products_path, class: 'button is-danger' %>
   </div>
 <% end %>

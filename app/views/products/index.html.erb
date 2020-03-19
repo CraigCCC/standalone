@@ -1,102 +1,130 @@
-<h1>
-  Product List
-  <%= link_to t("product.button.create"), new_product_path %>
+<h1 class="title">
+  <%= t("product.page.headline.index") %>
+  <%= link_to t("product.button.create"), new_product_path, class: 'button is-primary' %>
 </h1>
 <%#  %>
-<table>
-  <thead>
-    <tr>
-      <th scope='col'><%= t("product.column.brand.title")%></th>
-      <th scope='col'><%= t("product.column.article_no.title")%></th>
-      <th scope='col'><%= t("product.column.gateway.title")%></th>
-      <th scope='col'><%= t("product.column.execution.title")%></th>
-      <th scope='col'><%= t("product.column.sensor_tech.title")%></th>
-      <th scope='col'><%= t("product.column.dimension.title")%></th>
-      <th scope='col'><%= t("product.column.voltage.title")%></th>
-      <th scope='col'><%= t("product.column.two_channel.title")%></th>
-      <th scope='col'><%= t("product.column.incandescent_lamp_load_max.title")%></th>
-      <th scope='col'><%= t("product.column.fluorescent_lamp_load.title")%></th>
-      <th scope='col'><%= t("product.column.led_lamp_load_max.title")%></th>
-      <th scope='col'><%= t("product.column.load.title")%></th>
-      <th scope='col'><%= t("product.column.power_consumption.title")%></th>
-      <th scope='col'><%= t("product.column.stand_by_power_consumption.title")%></th>
-      <th scope='col'><%= t("product.column.detection_angle.title")%></th>
-      <th scope='col'><%= t("product.column.detection_range_towards.title")%></th>
-      <th scope='col'><%= t("product.column.detection_range_across.title")%></th>
-      <th scope='col'><%= t("product.column.detection_range_seated.title")%></th>
-      <th scope='col'><%= t("product.column.recommended_mounting_height.title")%></th>
-      <th scope='col'><%= t("product.column.max_mounting_height.title")%></th>
-      <th scope='col'><%= t("product.column.min_mounting_height.title")%></th>
-      <th scope='col'><%= t("product.column.ip.title")%></th>
-      <th scope='col'><%= t("product.column.ip_class.title")%></th>
-      <th scope='col'><%= t("product.column.lowest_ambient_temperature.title")%></th>
-      <th scope='col'><%= t("product.column.highest_ambient_temperature.title")%></th>
-      <th scope='col'><%= t("product.column.min_delay_time.title")%></th>
-      <th scope='col'><%= t("product.column.max_delay_time.title")%></th>
-      <th scope='col'><%= t("product.column.lowest_lux.title")%></th>
-      <th scope='col'><%= t("product.column.highest_lux.title")%></th>
-      <th scope='col'><%= t("product.column.lux_learning.title")%></th>
-      <th scope='col'><%= t("product.column.mounting_type.title")%></th>
-      <th scope='col'><%= t("product.column.application.title")%></th>
-      <th scope='col'><%= t("product.column.slave.title")%></th>
-      <th scope='col'><%= t("product.column.mixed_light_measurement.title")%></th>
-      <th scope='col'><%= t("product.column.dimmable_constant_light.title")%></th>
-      <th scope='col'><%= t("product.column.stand_by_light.title")%></th>
-      <th scope='col'><%= t("product.column.push_button_connectable.title")%></th>
-      <th scope='col'><%= t("product.column.orientation_light.title")%></th>
-      <th scope='col'><%= t("product.column.bluetooth.title")%></th>
-      <th scope='col'><%= t("product.column.description.title")%></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% unless @products.nil?%>
-      <% @products.each do |product| %>
-        <tr>
-          <td><%= is_other_option?(product, 'brand') %></td>
-          <td><%= product.article_no %></td>
-          <td><%= array_gateway_type(product) %></td>
-          <td><%= is_other_option?(product, 'execution') %></td>
-          <td><%= array_sensor_tech(product) %></td>
-          <td><%= product.dimension %></td>
-          <td><%= array_voltage(product) %></td>
-          <td><%= is_other_option?(product, 'two_channel') %></td>
-          <td><%= is_other_option?(product, 'incandescent_lamp_load_max') %></td>
-          <td><%= is_other_option?(product, 'fluorescent_lamp_load') %></td>
-          <td><%= is_other_option?(product, 'led_lamp_load_max') %></td>
-          <td><%= product.load_text %></td>
-          <td><%= is_other_option?(product, 'power_consumption')%></td>
-          <td><%= is_other_option?(product, 'stand_by_power_consumption')%></td>
-          <td><%= is_other_option?(product, 'detection_angle')%></td>
-          <td><%= is_other_option?(product, 'detection_range_towards')%></td>
-          <td><%= is_other_option?(product, 'detection_range_across')%></td>
-          <td><%= is_other_option?(product, 'detection_range_seated')%></td>
-          <td><%= is_other_option?(product, 'recommended_mounting_height')%></td>
-          <td><%= is_other_option?(product, 'max_mounting_height')%></td>
-          <td><%= is_other_option?(product, 'min_mounting_height')%></td>
-          <td><%= is_other_option?(product, 'ip')%></td>
-          <td><%= is_other_option?(product, 'ip_class')%></td>
-          <td><%= is_other_option?(product, 'lowest_ambient_temperature')%></td>
-          <td><%= is_other_option?(product, 'highest_ambient_temperature')%></td>
-          <td><%= is_other_option?(product, 'min_delay_time')%></td>
-          <td><%= is_other_option?(product, 'max_delay_time')%></td>
-          <td><%= is_other_option?(product, 'lowest_lux')%></td>
-          <td><%= is_other_option?(product, 'highest_lux')%></td>
-          <td><%= product.lux_learning %></td>
-          <td><%= array_mounting_type(product) %></td>
-          <td><%= array_application(product) %></td>
-          <td><%= is_other_option?(product, 'slave')%></td>
-          <td><%= is_other_option?(product, 'mixed_light_measurement')%></td>
-          <td><%= is_other_option?(product, 'dimmable_constant_light')%></td>
-          <td><%= is_other_option?(product, 'stand_by_light')%></td>
-          <td><%= is_other_option?(product, 'push_button_connectable')%></td>
-          <td><%= is_other_option?(product, 'orientation_light')%></td>
-          <td><%= array_bluetooth(product) %></td>
-          <td><%= truncate("#{product.description}", length: 20) %></td>
-          <td><%= link_to t("product.button.show"), product_path(product) %></td>
-          <td><%= link_to t("product.button.edit"), edit_product_path(product) %></td>
-          <td><%= link_to t("product.button.delete"), product_path(product), method: :delete, data: { confirm: '確定要刪除？' } %></td>
-        </tr>
+<div class="table-container">
+  <table class="table is-striped is-hoverable is-fullwidth is-bordered">
+    <thead>
+      <tr>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.brand.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.article_no.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.gateway.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.execution.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.sensor_tech.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.dimension.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.voltag is-whitee.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.two_channel.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.incandescent_lamp_load_max.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.fluorescent_lamp_load.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.led_lamp_load_max.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.load.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.power_consumption.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.stand_by_power_consumption.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.detection_angle.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.detection_range_towards.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.detection_range_across.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.detection_range_seated.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.recommended_mounting_height.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.max_mounting_height.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.min_mounting_height.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.ip.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.ip_class.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.lowest_ambient_temperature.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.highest_ambient_temperature.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.min_delay_time.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.max_delay_time.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.lowest_lux.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.highest_lux.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.lux_learning.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.mounting_type.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.application.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.slave.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.mixed_light_measurement.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.dimmable_constant_light.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.stand_by_light.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.push_button_connectable.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.orientation_light.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.bluetooth.title")%></div></th>
+        <th scope='col'><div class="tag is-white is-medium"><%= t("product.column.description.title")%></div></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% unless @products.nil?%>
+        <% @products.each do |product| %>
+          <tr>
+            <td><%= radio_option(product, 'brand') %></td>
+            <td><%= text_option(product.article_no) if product.article_no? %></td>
+            <td>
+              <div class="tags">
+                <%= checkbox_option(product, 'gateway', Product::Gateway) %>
+              </div>
+            </td>
+            <td><%= radio_option(product, 'execution') %></td>
+            <td>
+              <div class="tags">
+                <%= checkbox_option(product, 'sensor_tech', Product::Sensor_tech_array) %>
+              </div>
+            </td>
+            <td><%= text_option(product.dimension) if product.article_no.present? %></td>
+            <td>
+              <div class="tags">
+                <%= checkbox_option(product, 'voltage', Product::Voltage_array) %>
+              </div>
+            </td>
+            <td><%= radio_option(product, 'two_channel') %></td>
+            <td><%= radio_option(product, 'incandescent_lamp_load_max') %></td>
+            <td><%= radio_option(product, 'fluorescent_lamp_load') %></td>
+            <td><%= radio_option(product, 'led_lamp_load_max') %></td>
+            <td><%= text_option(product.load_text) if product.load_text.present? %></td>
+            <td><%= radio_option(product, 'power_consumption')%></td>
+            <td><%= radio_option(product, 'stand_by_power_consumption')%></td>
+            <td><%= radio_option(product, 'detection_angle')%></td>
+            <td><%= radio_option(product, 'detection_range_towards')%></td>
+            <td><%= radio_option(product, 'detection_range_across')%></td>
+            <td><%= radio_option(product, 'detection_range_seated')%></td>
+            <td><%= radio_option(product, 'recommended_mounting_height')%></td>
+            <td><%= radio_option(product, 'max_mounting_height')%></td>
+            <td><%= radio_option(product, 'min_mounting_height')%></td>
+            <td><%= radio_option(product, 'ip')%></td>
+            <td><%= radio_option(product, 'ip_class')%></td>
+            <td><%= radio_option(product, 'lowest_ambient_temperature')%></td>
+            <td><%= radio_option(product, 'highest_ambient_temperature')%></td>
+            <td><%= radio_option(product, 'min_delay_time')%></td>
+            <td><%= radio_option(product, 'max_delay_time')%></td>
+            <td><%= radio_option(product, 'lowest_lux')%></td>
+            <td><%= radio_option(product, 'highest_lux')%></td>
+            <td><%= boolean_option(product, 'lux_learning') %></td>
+            <td>
+              <div class="tags">
+                <%= checkbox_option(product, 'mounting_type', Product::Mounting_type) %>
+              </div>
+            </td>
+            <td>
+              <div class="tags">
+                <%= checkbox_option(product, 'application', Product::Application) %>
+              </div>
+            </td>
+            <td><%= radio_option(product, 'slave')%></td>
+            <td><%= radio_option(product, 'mixed_light_measurement')%></td>
+            <td><%= radio_option(product, 'dimmable_constant_light')%></td>
+            <td><%= radio_option(product, 'stand_by_light')%></td>
+            <td><%= radio_option(product, 'push_button_connectable')%></td>
+            <td><%= radio_option(product, 'orientation_light')%></td>
+            <td>
+              <div class="tags">
+                <%= checkbox_option(product, 'bluetooth', Product::Bluetooth) %>
+              </div>
+            </td>
+            <td><%= truncate("#{product.description}", length: 20) %></td>
+            <td class="">
+              <%= link_to t("product.button.show"), product_path(product),class: 'button is-info' %>
+              <%= link_to t("product.button.edit"), edit_product_path(product),class: 'button is-primary' %>
+              <%= link_to t("product.button.delete"), product_path(product), method: :delete, data: { confirm: '確定要刪除？' },class: 'button is-danger' %>
+            </td>
+          </tr>
+        <% end %>
       <% end %>
-    <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+</div>

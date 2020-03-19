@@ -1,5 +1,13 @@
 class Product < ApplicationRecord
   include Bitfields
+  # Constant
+  Gateway = [:knx, :dali_addressble, :dali_broadcast, :standalone]
+  Sensor_tech_array = [:pir, :hf, :ultrasonic]
+  Voltage_array = [:vdc12, :vdc24, :vac110, :vac110_230, :vac220_240, :vdc21_30, :vdc9_22, :vdc12_36, :vdc12_48]
+  Mounting_type = [:surface, :flush, :wall, :ceiling]
+  Application = [:office, :hospital, :corridor, :hallway, :aisle, :car_park, :storage, :underground_garages, :outdoor, :schools, :conference_rooms, :warehouses, :staircases, :industrial_halls, :emergency_power_supply_networks, :toilets]
+  Bluetooth = [:not_availablel, :bluetooth_4dx, :bluetooth_5d0, :bluetooth_mesh]
+  Lux_learning = [:ll_yes, :ll_no]
 
   # enums
   enum brand: [:other_brand, :beg, :esylux, :steinel, :cp, :theben]
