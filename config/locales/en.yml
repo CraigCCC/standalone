@@ -12,21 +12,21 @@ en:
         cp: "CP"
         theben: "THEBEN"
       article_no: 
-        title: "Article_no."
+        title: "Article no."
       gateway:
         title: "Type"
         knx: "KNX"
-        dali_addressble: "Dali_Addressble"
-        dali_broadcast: "Dali_Broadcast"
+        dali_addressble: "Dali Addressble"
+        dali_broadcast: "Dali Broadcast"
         standalone: "Standalone"
-        proprietary_system: "Proprietary_System"
+        proprietary_system: "Proprietary System"
       execution:
         title: "Execution"
-        motion_sensor: 'Motion_sensor'
-        presence_sensor: 'Presence_sensor'
-        not_mention: 'Not_mention'
+        motion_sensor: 'Motion sensor'
+        presence_sensor: 'Presence sensor'
+        not_mention: 'Not mention'
       sensor_tech:
-        title: 'Sensor_technology'
+        title: 'Sensor technology'
         pir: 'PIR'
         hf: 'HF'
         ultrasonic: 'Ultrasonic'
@@ -40,23 +40,23 @@ en:
         vac110_230: '110-230 VAC'
         vac220_240: '220-240 VAC'
         v230: '230 V'
-        vdc21_30: '21-30 VDC(KNX_bus)'
-        vdc9_22: '9.5-22.5 VDC(DALI_bus)'
+        vdc21_30: '21-30 VDC(KNX bus)'
+        vdc9_22: '9.5-22.5 VDC(DALI bus)'
         vdc12_36: '12-36 VDC'
         vdc12_48: '12-48 VDC'
       two_channel:
-        title: '2_Channel'
+        title: '2 Channel'
         no_channel: 'No'
         hvac: 'HVAC'
       incandescent_lamp_load_max:
-        title: 'Incandescent_lamp_load(Max.)'
+        title: 'Incandescent lamp load(Max.)'
         w2000: '2000W'
         w2300: '2300W'
       fluorescent_lamp_load:
-        title: 'Fluorescent_lamp_load'
+        title: 'Fluorescent lamp load'
         fll1150va: '1150VA'
       led_lamp_load_max:
-        title: 'LED_lamp_load(Max.)'
+        title: 'LED lamp load(Max.)'
         max_lll150w: '150W'
         max_lll200w: '200W'
         max_lll300w: '300w'
@@ -74,14 +74,14 @@ en:
         pc06w: '0.6W'
         pc15w: '1.5W'
       stand_by_power_consumption:
-        title: 'Stand_by_power_consumption'
+        title: 'Stand by power consumption'
         sbpc01w: '0.1W'
         sbpc025w: '0.25W'
         sbpc05w: '0.5W'
         sbpc1w: '1W'
         sbpc02ma: '0.2mA'
       detection_angle:
-        title: 'Detection_angle'
+        title: 'Detection angle'
         da110: '110˚'
         da120: '120˚'
         da150: '150˚'
@@ -91,7 +91,7 @@ en:
         da240: '240˚'
         da360: '360˚'
       detection_range_towards:
-        title: 'Detection_range(towards)'
+        title: 'Detection range(towards)'
         drt3m: '3m'
         drt5m: '5m'
         drt6m: '6m'
@@ -104,7 +104,7 @@ en:
         drt28m: '28m'
         drt30m: '30m'
       detection_range_across:
-        title: 'Detection_range(across)'
+        title: 'Detection range(across)'
         dra3m: '3m'
         dra5m: '5m'
         dra6m: '6m'
@@ -120,7 +120,7 @@ en:
         dra32m: '32m'
         dra40m: '40m'
       detection_range_seated:
-        title: 'Detection_range(seated)'
+        title: 'Detection range(seated)'
         drs3m: '3m'
         drs5m: '5m'
         drs6m: '6m'
@@ -133,23 +133,23 @@ en:
         drs28m: '28m'
         drs30m: '30m'
       recommended_mounting_height:
-        title: 'Recommended_mounting_height'
+        title: 'Recommended mounting height'
         rmh1d1m: '1.1m'
         rmh2m: '2m'
         rmh2d5m: '2.5m'
         rmh2d8m: '2.8m'
         rmh3m: '3m'
-        rmh_not_mention: 'Not_mention'
+        rmh_not_mention: 'Not mention'
       max_mounting_height:
-        title: 'Max._mounting_height'
+        title: 'Max. mounting height'
         max_mh2d2m: '2.2m'
         max_mh3m: '3m'
         max_mh5m: '5m'
         max_mh14m: '14m'
         max_mh15m: '15m'
-        max_mh_not_mention: 'Not_mention'
+        max_mh_not_mention: 'Not mention'
       min_mounting_height:
-        title: 'Min._mounting_height'
+        title: 'Min. mounting height'
         min_mh1d1m: '1.1m'
         min_mh1d8m: '1.8m'
         min_mh2m: '2m'
@@ -214,9 +214,10 @@ en:
         lux_infinity: '∞'
       lux_learning:
         title: 'Lux learning'
-        ll_yes: 'Yes'
+        is_true: 'Yes'
+        is_false: 'No'
       mounting_type:
-        title: 'Mounting_type'
+        title: 'Mounting type'
         surface: 'Surface mount'
         flush: 'Flush mount'
         wall: 'Wall mount'
@@ -228,32 +229,32 @@ en:
         corridor: 'Corridor'
         hallway: 'Hallway'
         aisle: 'Aisle'
-        car_park: 'Car_park'
+        car_park: 'Car park'
         storage: 'Storage'
-        underground_garages: 'Underground_garages'
+        underground_garages: 'Underground garages'
         outdoor: 'Outdoor'
         schools: 'Schools'
-        conference_rooms: 'Conference_rooms'
+        conference_rooms: 'Conference rooms'
         warehouses: 'Warehouses'
         staircases: 'Staircases'
-        industrial_halls: 'Industrial_halls'
-        emergency_power_supply_networks: 'Emergency_power_supply_networks'
+        industrial_halls: 'Industrial halls'
+        emergency_power_supply_networks: 'Emergency power supply networks'
         toilets: 'Toilets'
       slave:
         title: 'Slave'
         s_yes: 'Yes'
         s_no: 'No'
-        s_not_mention: 'Not_mention'
+        s_not_mention: 'Not mention'
       mixed_light_measurement:
-        title: 'Mixed_light_measurement'
+        title: 'Mixed light measurement'
         mlm_yes: 'Yes'
         mlm_no: 'No'
-        mlm_not_mention: 'Not_mention'
+        mlm_not_mention: 'Not mention'
       dimmable_constant_light:
         title: 'Dimmable(Constant light)'
         dcl_yes: 'Yes'
         dcl_no: 'No'
-        dcl_not_mention: 'Not_mention'
+        dcl_not_mention: 'Not mention'
       stand_by_light:
         title: 'Stand-by light'
         sbl_no: 'No'
@@ -264,18 +265,18 @@ en:
         title: 'Push-button connectable'
         pbc_yes: 'Yes'
         pbc_no: 'No'
-        pbc_not_mention: 'Not_mention'
+        pbc_not_mention: 'Not mention'
       orientation_light:
-        title: 'Orientation_light'
+        title: 'Orientation light'
         ol_yes: 'Yes'
         ol_no: 'No'
-        ol_not_mention: 'Not_mention'
+        ol_not_mention: 'Not mention'
       bluetooth:
         title: 'Bluetooth'
-        not_availablel: 'Not_availablel'
-        bluetooth_4dx: 'Bluetooth_4.x'
-        bluetooth_5d0: 'Bluetooth_5.0'
-        bluetooth_mesh: 'Bluetooth_mesh'
+        not_availablel: 'Not availablel'
+        bluetooth_4dx: 'Bluetooth 4.x'
+        bluetooth_5d0: 'Bluetooth 5.0'
+        bluetooth_mesh: 'Bluetooth mesh'
       description:
         title: 'Description'
     button:

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_18_130246) do
+ActiveRecord::Schema.define(version: 2020_03_19_032933) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -93,7 +93,7 @@ ActiveRecord::Schema.define(version: 2020_03_18_130246) do
     t.boolean "standalone"
     t.boolean "proprietary_system"
     t.boolean "other_type"
-    t.string "type_text"
+    t.string "gateway_text"
     t.boolean "pir"
     t.boolean "hf"
     t.boolean "ultrasonic"

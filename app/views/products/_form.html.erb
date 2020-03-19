@@ -63,7 +63,7 @@
   
       <%= f.check_box :other_type, class: 'is-checkradio is-block is-danger' %>
       <%= f.label :other_type, t("product.column.other.title") %>
-      <%= f.text_field :type_text, class: 'input is-inline is-small' %>
+      <%= f.text_field :gateway_text, class: 'input is-inline is-small' %>
     </div>
   </div>
 
@@ -725,7 +725,7 @@
   <div class="field">
     <%= f.label :lux_learning, t("product.column.lux_learning.title") + ':', class: 'label' %>
     <%= f.check_box :lux_learning, class: 'is-checkradio is-block is-info' %>
-    <%= f.label :lux_learning, t("product.column.lux_learning.ll_yes") %>
+    <%= f.label :lux_learning, t("product.column.lux_learning.is_true") %>
   </div>
 
   <%# Mounting type 複選 %>
